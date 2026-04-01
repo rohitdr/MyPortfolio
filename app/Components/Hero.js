@@ -89,16 +89,32 @@ export default function Hero() {
               View Projects
             </button>
 
-            <button
-              onClick={() =>
-                document
-                  .getElementById("Contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-              className="px-6 py-3 rounded-lg border border-white/20 hover:bg-white/10 transition-all duration-300 hover:scale-105"
-            >
-              Contact Me
-            </button>
+          <motion.a
+          whileHover={{ boxShadow: "0 0 15px rgb(67 56 202)" }}
+  href="/resume.pdf"
+  download
+  className="flex items-center gap-2 px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 transition-all hover:scale-105"
+>
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+    <defs>
+      <linearGradient id="grad" x1="0" y1="0" x2="24" y2="24">
+        <stop offset="0%" stopColor="#818cf8" />   {/* indigo */}
+        <stop offset="50%" stopColor="#a855f7" />  {/* purple */}
+        <stop offset="100%" stopColor="#ec4899" /> {/* pink */}
+      </linearGradient>
+    </defs>
+
+    <path
+      d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"
+      stroke="url(#grad)"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+
+   Resume
+</motion.a>
           </motion.div>
         </div>
 
@@ -107,6 +123,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
+    
           className="hidden lg:block z-10"
         >
           <div className="bg-[#0B0F1A]/80 backdrop-blur-xl border border-white/10 rounded-xl p-5 w-[300px] shadow-xl">

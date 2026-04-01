@@ -3,6 +3,7 @@ import React, { act, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import MagnaticItem from './MagnaticItem'
 import Hero from './Hero'
+import Projects from './Projects'
 export default function Navbar() {
   const [active,setActive]=useState("Home")
 const sections =["Home","Projects","Skills","Contact"]
@@ -108,8 +109,8 @@ const scrollToSection=(item)=>{
     </motion.div>
   </motion.div>
 )}
-<section id="Home" className='h-[2000px]'><Hero></Hero></section>
-<section id="Projects" className='h-[2000px]'>as</section>
+<section id="Home" className=''><Hero></Hero></section>
+<section id="Projects" className=''><Projects></Projects></section>
 <section id="Skills" className='h-[2000px]'>asfd</section>
 <section id="Contact" className='h-[2000px]'>asd</section>
  </>
