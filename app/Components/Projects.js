@@ -11,8 +11,8 @@ const projects = [
       "Fast chat switching",
     ],
     image: "https://res.cloudinary.com/do2twyxai/image/upload/v1775015007/Screenshot_235_shn4la.png",
-    live: "#",
-    github: "#",
+    live: "https://chat-nova-frontend-4nna.vercel.app/",
+    github: "https://github.com/rohitdr/ChatNova-Frontend.git",
   },
   {
     title: "Recipe Riot",
@@ -24,8 +24,8 @@ const projects = [
       "Smooth interactions",
     ],
     image: "https://res.cloudinary.com/do2twyxai/image/upload/v1774891170/zytctzvzim7ujlw4oh8w.jpg",
-    live: "#",
-    github: "#",
+    live: "https://recipe-riot-frontend.vercel.app/",
+    github: "https://github.com/rohitdr/RecipeRiot-Frontend.git",
   },
 ];
 
@@ -78,10 +78,7 @@ export default function Projects() {
               initial={{ opacity: 0, x: index % 2 !== 0 ? 60 : -60 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              whileTap={{ scale: 0,  opacity:0, transition: { 
-      type: "tween", 
-      duration: 0.5
-    } }}
+            
           
             >
               <h3 className="text-2xl md:text-3xl font-semibold text-white">

@@ -4,11 +4,14 @@ import { motion } from 'framer-motion'
 import MagnaticItem from './MagnaticItem'
 import Hero from './Hero'
 import Projects from './Projects'
+import ContactMe from './ContactMe'
+import Skills from './Skills'
 export default function Navbar() {
   const [active,setActive]=useState("Home")
-const sections =["Home","Projects","Skills","Contact"]
+const sections =["Home","Projects","Skills","Contact","CV"]
 const [isOpen,setIsOpen]=useState(false)
 const scrollToSection=(item)=>{
+  if(item==="Resume") return
   const el= document.getElementById(item)
   el.scrollIntoView({behavior:"smooth"})
 
@@ -48,6 +51,17 @@ const scrollToSection=(item)=>{
      }
   },[])
 
+  const handleSectionClick=(section)=>{
+    if(section !=="CV"){
+scrollToSection(item)
+
+    }
+    else{
+
+      window.open("https://drive.google.com/file/d/1L4KBT9Pto4LxVC2OgAhrexBfeBPHazhX/view?usp=drivesdk","_blank")
+    }
+
+  }
   return (
  <>
  <motion.nav initial={{y:-80,opacity:0}} animate={{y:0,opacity:1}} className='fixed left-1/2 -translate-x-1/2 top-6 z-40 hidden md:block'>
@@ -58,7 +72,7 @@ const scrollToSection=(item)=>{
  <div className='flex text-white relative gap-2 '> 
 {sections.map((item)=>(
   <MagnaticItem key={item}  active={active === item}
-                  onClick={() => scrollToSection(item)}>
+                  onClick={()=>handleSectionClick(item)}>
     {item}
 </MagnaticItem>
 ))}
@@ -95,7 +109,7 @@ const scrollToSection=(item)=>{
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.05 }}
-          onClick={() => scrollToSection(section)}
+          onClick={()=>handleSectionClick(section)}
           className={`relative px-4 py-2 rounded-lg text-lg capitalize cursor-pointer transition-all
             ${
               active === section
@@ -111,8 +125,8 @@ const scrollToSection=(item)=>{
 )}
 <section id="Home" className=''><Hero></Hero></section>
 <section id="Projects" className=''><Projects></Projects></section>
-<section id="Skills" className='h-[2000px]'>asfd</section>
-<section id="Contact" className='h-[2000px]'>asd</section>
+<section id="Skills" className=''><Skills></Skills></section>
+<section id="Contact" className=''><ContactMe/></section>
  </>
   )
 }

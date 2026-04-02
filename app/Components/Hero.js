@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
 
-      {/* 🔥 BACKGROUND GLOW */}
+  
       <div className="absolute w-[600px] h-[600px] bg-indigo-500/20 blur-3xl rounded-full top-[-150px] left-[-150px]" />
       <div className="absolute w-[500px] h-[500px] bg-purple-500/20 blur-3xl rounded-full bottom-[-100px] right-[-100px]" />
 
@@ -91,7 +91,8 @@ export default function Hero() {
 
           <motion.a
           whileHover={{ boxShadow: "0 0 15px rgb(67 56 202)" }}
-  href="/resume.pdf"
+  href="https://drive.google.com/file/d/1L4KBT9Pto4LxVC2OgAhrexBfeBPHazhX/view?usp=drivesdk"
+  target="_blank"
   download
   className="flex items-center gap-2 px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 transition-all hover:scale-105"
 >
