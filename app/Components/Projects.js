@@ -10,7 +10,7 @@ const projects = [
       "No UI flicker",
       "Fast chat switching",
     ],
-    image: "https://res.cloudinary.com/do2twyxai/image/upload/v1775015007/Screenshot_235_shn4la.png",
+    video: "https://res.cloudinary.com/do2twyxai/video/upload/v1775322940/Untitled_89_1080p_zfl3yv.3gp",
     live: "https://chat-nova-frontend-4nna.vercel.app/",
     github: "https://github.com/rohitdr/ChatNova-Frontend.git",
   },
@@ -64,11 +64,19 @@ export default function Projects() {
               transition={{ duration: 0.3 }}
               className="relative rounded-2xl overflow-hidden border border-white/10 shadow-xl"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover rounded-2xl "
-              />
+            <video 
+   
+  autoPlay 
+  loop 
+  muted 
+  className="rounded-xl shadow-lg"
+>
+  <source 
+    src="https://res.cloudinary.com/do2twyxai/video/upload/f_mp4,q_auto/v1775322940/Untitled_89_1080p_zfl3yv.mp4" 
+    type="video/mp4" 
+  />
+</video>
+              
               <div className="absolute -inset-2  rounded-2xl blur-2xl opacity-30 pointer-events-none" />
             </motion.a>
 

@@ -61,8 +61,8 @@ export default function Skills() {
             whileHover="hover"
           >
             {skill.icon}
-            <p className="mt-4 text-lg font-semibold">{skill.name}</p>
-            <p className="mt-1 text-sm text-gray-300 text-center">{skill.description}</p>
+            <p className="mt-4 text-sm md:text-lg font-semibold">{skill.name}</p>
+            <p className="mt-1 text-[10px] md:text-sm text-gray-300 text-center">{skill.description}</p>
           </motion.div>
         ))}
       </motion.div>

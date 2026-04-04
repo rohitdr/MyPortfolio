@@ -9,6 +9,7 @@ import {
   FaWhatsapp
 } from "react-icons/fa";
 import { SiMinutemailer } from "react-icons/si";
+import { toast } from "sonner";
 
 export default function ContactMe() {
   const [messageSent,setMessageSent]=useState(false)
@@ -23,19 +24,20 @@ const [lastSentTime,setLastSentTime]=useState(0)
   };
 
 const handleSubmit = (e) => {
+    e.preventDefault();
   if(formData.name.length<3){
-alert("Please Write Your full Name")
+toast.warning("Please Write Your full Name")
   }
   else if(formData.message.length<20){
-    alert("Messages length should be more than 20 Character")
+    toast.warning("Messages length should be more than 20 Character")
 
   }
   else{
-  e.preventDefault();
+
  const now = Date.now();
 
   if (now - lastSentTime < 30000) {
-    alert("Please wait before sending another message ⏳");
+   toast.warning("Please wait before sending message again")
     return;
   }
 console.log(process.env.NEXT_PUBLIC_EMAILJS_KEY)
@@ -52,7 +54,7 @@ console.log(process.env.NEXT_PUBLIC_EMAILJS_KEY)
      process.env.NEXT_PUBLIC_EMAILJS_KEY
   )
   .then(() => {
-    console.log("Form submitted");
+   toast.success("Message sent successfully 🚀")
     setFormData({
       name: "",
       email: "",
@@ -61,7 +63,7 @@ console.log(process.env.NEXT_PUBLIC_EMAILJS_KEY)
   })
   .catch((error) => {
     console.error(error);
-    alert("Failed to send ❌");
+   toast.error("Failed to send ❌")
   });}
 };
 
@@ -86,9 +88,9 @@ console.log(process.env.NEXT_PUBLIC_EMAILJS_KEY)
       className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 text-white overflow-hidden p-6"
     >
               <div className="absolute w-[600px] h-[600px] bg-indigo-500/20 blur-3xl rounded-full top-[-200px] left-[-200px]" />
-  
+    <div className="absolute w-[500px] h-[500px] bg-purple-500/20 blur-3xl rounded-full bottom-[-150px] right-[-150px]" />
       <motion.div
-        className="relative w-full max-w-lg bg-gray-900/90 p-8 rounded-2xl shadow-lg border border-white/20 z-10"
+        className="relative w-full max-w-lg bg-gray-900/90 p-6 md:p-8 rounded-2xl shadow-lg border border-white/20 z-10"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -133,15 +135,15 @@ console.log(process.env.NEXT_PUBLIC_EMAILJS_KEY)
             placeholder="Your Message"
             value={formData.message}
             onChange={handleChange}
-            rows={5}
-            className="p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-indigo-500 resize-none"
+          
+            className="p-3 h-24 md:h-40 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-indigo-500 resize-none"
             variants={itemVariants}
             whileFocus={{ scale: 1.02, borderColor: "#6366f1" }}
           />
 
           <motion.button
             type="submit"
-            className="mt-4 bg-indigo-600 hover:bg-indigo-500 transition-colors rounded-lg py-3 font-semibold"
+            className="mt-2 md:mt-4 bg-indigo-600 hover:bg-indigo-500 transition-colors rounded-lg py-3 font-semibold"
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -152,7 +154,7 @@ console.log(process.env.NEXT_PUBLIC_EMAILJS_KEY)
  
       
         <motion.div
-          className="flex justify-center gap-6 mt-6"
+          className="flex justify-center gap-6 mt-4 md:mt-6 "
           variants={itemVariants}
         >
           <motion.a
@@ -192,7 +194,7 @@ console.log(process.env.NEXT_PUBLIC_EMAILJS_KEY)
         </motion.div>
 
      
-        <motion.p className="mt-6 text-center text-gray-400 text-sm" variants={itemVariants}>
+        <motion.p className=" mt-4 md:mt-6 text-center text-gray-400 text-sm" variants={itemVariants}>
           © {new Date().getFullYear()} Rohit Kumar. All rights reserved.
         </motion.p>
       </motion.div>

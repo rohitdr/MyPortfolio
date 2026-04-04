@@ -53,14 +53,13 @@ const scrollToSection=(item)=>{
 
   const handleSectionClick=(section)=>{
     if(section !=="CV"){
-scrollToSection(item)
+scrollToSection(section)
 
     }
     else{
 
       window.open("https://drive.google.com/file/d/1L4KBT9Pto4LxVC2OgAhrexBfeBPHazhX/view?usp=drivesdk","_blank")
     }
-
   }
   return (
  <>
@@ -109,7 +108,7 @@ scrollToSection(item)
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: index * 0.05 }}
-          onClick={()=>handleSectionClick(section)}
+          onClick={()=>{setIsOpen(false),handleSectionClick(section)}}
           className={`relative px-4 py-2 rounded-lg text-lg capitalize cursor-pointer transition-all
             ${
               active === section
