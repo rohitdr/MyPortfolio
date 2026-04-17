@@ -1,13 +1,17 @@
 "use client"
-import React, { act, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import MagnaticItem from './MagnaticItem'
 import Hero from './Hero'
 import Projects from './Projects'
 import ContactMe from './ContactMe'
 import Skills from './Skills'
-export default function Navbar() {
+import { useRouter } from 'next/navigation'
+export default function Navbar({type="portfolio"}) {
+  const router =useRouter()
   const [active,setActive]=useState("Home")
+  const portfolioSection=["Home","Projects","Skills","Contact","CV"]
+  const ChatSection=["Home","Projects","Skills","Contact","CV"]
 const sections =["Home","Projects","Skills","Contact","CV"]
 const [isOpen,setIsOpen]=useState(false)
 const scrollToSection=(item)=>{
@@ -52,10 +56,22 @@ const scrollToSection=(item)=>{
   },[])
 
   const handleSectionClick=(section)=>{
-    if(section !=="CV"){
+
+    if(type!=="portfolio"){
+      router.push('/')
+      setTimeout(() => {
+         if(section !=="CV"){
 scrollToSection(section)
 
     }
+      }, 200);
+      return
+    }
+     if(section !=="CV"){
+scrollToSection(section)
+
+    }
+   
     else{
 
       window.open("https://drive.google.com/file/d/1L4KBT9Pto4LxVC2OgAhrexBfeBPHazhX/view?usp=drivesdk","_blank")
@@ -122,10 +138,12 @@ scrollToSection(section)
     </motion.div>
   </motion.div>
 )}
+{type==="portfolio" &&<>
 <section id="Home" className=''><Hero></Hero></section>
 <section id="Projects" className=''><Projects></Projects></section>
 <section id="Skills" className=''><Skills></Skills></section>
-<section id="Contact" className=''><ContactMe/></section>
+<section id="Contact" className=''><ContactMe/></section></>
+}
  </>
   )
 }

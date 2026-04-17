@@ -1,5 +1,9 @@
+"use client"
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
+export default function Projects() {
+  
 const projects = [
   {
     title: "ChatNova",
@@ -10,12 +14,12 @@ const projects = [
       "No UI flicker",
       "Fast chat switching",
     ],
-    video: "https://res.cloudinary.com/do2twyxai/video/upload/v1775322940/Untitled_89_1080p_zfl3yv.3gp",
+    image:"https://res.cloudinary.com/do2twyxai/image/upload/v1775015007/Screenshot_235_shn4la.png",
     live: "https://chat-nova-frontend-4nna.vercel.app/",
     github: "https://github.com/rohitdr/ChatNova-Frontend.git",
   },
   {
-    title: "Recipe Riot",
+    title: "RecipeRiot",
     desc: "Recipe discovery platform with search and filtering.",
     tech: ["React", "Tailwind", "API", "Node.js"],
     features: [
@@ -23,16 +27,18 @@ const projects = [
       "Responsive UI",
       "Smooth interactions",
     ],
-    image: "https://res.cloudinary.com/do2twyxai/image/upload/v1774891170/zytctzvzim7ujlw4oh8w.jpg",
+    image: "https://res.cloudinary.com/do2twyxai/image/upload/v1776438372/Screenshot_246_q46jee.png",
     live: "https://recipe-riot-frontend.vercel.app/",
     github: "https://github.com/rohitdr/RecipeRiot-Frontend.git",
   },
 ];
-
-export default function Projects() {
+const handleClick=(name)=>{
+router.push(`/${name}`)
+}
+  const router=useRouter();
   return (
     <section className="relative py-16 px-6  mx-auto overflow-hidden justify-center flex">
-{/* Background Glows */}
+
       <div className="absolute w-[600px] h-[600px] bg-indigo-500/20 blur-3xl rounded-full top-[-200px] left-[-200px]" />
       <div className="absolute w-[500px] h-[500px] bg-purple-500/20 blur-3xl rounded-full bottom-[-150px] right-[-150px]" />
       <div className="max-w-6xl">
@@ -47,36 +53,26 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={project.title}
+            onClick={()=>{handleClick(project.title)}}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
-            className={`grid md:grid-cols-2 gap-10 items-center  ${
+            className={`grid md:grid-cols-2 gap-10 items-center relative  ${
               index % 2 !== 0 ? "md:flex-row-reverse" : ""
             }`}
           >
 
             {/* Image */}
             <motion.a
-              href={project.live}
-              target="_blank"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              className="relative rounded-2xl overflow-hidden border border-white/10 shadow-xl"
+              className="relative rounded-2xl group overflow-hidden border border-white/10 shadow-xl cursor-pointer"
             >
-            <video 
-   
-  autoPlay 
-  loop 
-  muted 
-  className="rounded-xl shadow-lg"
->
-  <source 
-    src="https://res.cloudinary.com/do2twyxai/video/upload/f_mp4,q_auto/v1775322940/Untitled_89_1080p_zfl3yv.mp4" 
-    type="video/mp4" 
-  />
-</video>
-              
+                      <img src={project.image} alt={`${project.title} Preview`} />
+                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+    <p className="text-white font-semibold">View Project →</p>
+  </div>
               <div className="absolute -inset-2  rounded-2xl blur-2xl opacity-30 pointer-events-none" />
             </motion.a>
 
