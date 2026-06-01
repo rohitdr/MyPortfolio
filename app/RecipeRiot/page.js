@@ -87,8 +87,8 @@ export default function page() {
   const projectInfo ={
   name:"RecipeRiot",
   description:" A real-time chat platform built with modern technologies featuring instant messaging, smooth infinite scrolling, and scalable backend architecture.",
-  img:"https://res.cloudinary.com/do2twyxai/image/upload/v1776438372/Screenshot_246_q46jee.png",
-  link:"https://recipe-riot-frontend-4gsk2aapu-rohitdrs-projects.vercel.app/",
+  img:"/reciperiot.png",
+  link:"https://recipe-riot-frontend-aed5.vercel.app/",
   github:"https://github.com/rohitdr/RecipeRiot-Frontend.git"
 }
 const DatabaseSchema = [
@@ -132,34 +132,34 @@ const demoInfo = {
 };
 const screenshots = [
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776446122/Screenshot_247_sxneos.png",
+    img: "/reciperiot/search.png",
     title: "Recipe Search",
     desc: "Search recipes in real-time with fast API response",
   },
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776446563/Screenshot_252_ogaxpj.png",
+    img: "/reciperiot/category.png",
     title: "Recipe Categories",
     desc: "Browse recipes by food categories and filters",
   },
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776446563/Screenshot_251_msxbrv.png",
+       img: "/reciperiot/recipe.png",
     title: "Individual Recipe Page",
     desc: "Detailed view with ingredients, instructions, and nutrition info",
   },
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776446119/Screenshot_250_llbdmf.png",
+      img: "/reciperiot/comment.png",
     title: "Comments & Ratings",
     desc: "Users can comment and rate recipes in real time",
   },
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776446122/Screenshot_249_l844la.png",
+      img: "/reciperiot/comment.png",
     title: "Liked Recipes",
     desc: "Save and manage favorite recipes for quick access",
   },
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776446120/Screenshot_248_c4ntpc.png",
-    title: "Admin Panel",
-    desc: "Manage recipes, delete content, and moderate platform data",
+      img: "/reciperiot/autoimage.png",
+    title: "Auto Image Generation ",
+    desc: "Generate image from database ",
   },
 ];
 const futureGoals = [

@@ -142,38 +142,38 @@ export default function chatnova() {
 const projectInfo ={
   name:"ChatNova",
   description:" A real-time chat platform built with modern technologies featuring instant messaging, smooth infinite scrolling, and scalable backend architecture.",
-  img:"https://res.cloudinary.com/do2twyxai/image/upload/v1775015007/Screenshot_235_shn4la.png",
+  img:"/chatnova.png",
   link:"https://chat-nova-frontend-4nna.vercel.app",
   github:"https://github.com/rohitdr/ChatNova-Frontend.git"
 }
 const screenshots = [
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776420978/Screenshot_239_syabhh.png",
+    img: "/chatnova/ui.png",
     title: "Real-time Chat UI",
     desc: "Socket powered messaging",
   },
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776421171/Screenshot_241_nkfkx6.png",
+   img: "/chatnova/messagestatus.png",
     title: "Message Status",
     desc: "Message Status, Message Reactions",
   },
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776427345/Screenshot_245_gyusdu.png",
+     img: "/chatnova/login.png",
     title: "JWT Auth Flow",
     desc: "Secure login system",
   },
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776421201/Screenshot_242_e87la4.png",
+     img: "/chatnova/group.png",
     title: "Group Chats",
     desc: "Multi-user conversations",
   },
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776425789/Screenshot_244_asxq9p.png",
+     img: "/chatnova/online.png",
     title: "Online Presence",
     desc: "Live User Tracking",
   },
   {
-    img: "https://res.cloudinary.com/do2twyxai/image/upload/v1776421326/Screenshot_243_cwzauq.png",
+      img: "/chatnova/responsive.png",
     title: "Responsive UI",
     desc: "Mobile optimized design",
   },
