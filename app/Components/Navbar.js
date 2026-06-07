@@ -1,149 +1,125 @@
-"use client"
-import React, {  useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import MagnaticItem from './MagnaticItem'
-import Hero from './Hero'
-import Projects from './Projects'
-import ContactMe from './ContactMe'
-import Skills from './Skills'
-import { useRouter } from 'next/navigation'
-export default function Navbar({type="portfolio"}) {
-  const router =useRouter()
-  const [active,setActive]=useState("Home")
-  const portfolioSection=["Home","Projects","Skills","Contact","CV"]
-  const ChatSection=["Home","Projects","Skills","Contact","CV"]
-const sections =["Home","Projects","Skills","Contact","CV"]
-const [isOpen,setIsOpen]=useState(false)
-const scrollToSection=(item)=>{
-  if(item==="Resume") return
-  const el= document.getElementById(item)
-  el.scrollIntoView({behavior:"smooth"})
+"use client";
 
-}
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
 
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
 
- useEffect(()=>{
-    const handleScrollActive=()=>{
-        let current=""
-          const scrollTop = window.scrollY
-         if (scrollTop < 50) {
-      setActive("Home")
-      return
-    }
-    sections.forEach((id)=>{
-    
+  const links = ["Home", "Projects", "Skills", "Contact"];
 
-  const el = document.getElementById(id)
-  if(!el) return
-     const rect = el.getBoundingClientRect()
-
-      if (rect.top <= 150 && rect.bottom >= 150) {
-      
-    current=id
-  }
-  
-
-})
- if (current && current !== active) {
-      setActive(current)
-    }
-  
-    }
-     window.addEventListener("scroll",handleScrollActive)
-     return ()=>{
-        window.removeEventListener("scroll",handleScrollActive)
-     }
-  },[])
-
-  const handleSectionClick=(section)=>{
-
-    if(type!=="portfolio"){
-      router.push('/')
-      setTimeout(() => {
-         if(section !=="CV"){
-scrollToSection(section)
-
-    }
-      }, 200);
-      return
-    }
-     if(section !=="CV"){
-scrollToSection(section)
-
-    }
-   
-    else{
-
-      window.open("https://drive.google.com/file/d/1L4KBT9Pto4LxVC2OgAhrexBfeBPHazhX/view?usp=drivesdk","_blank")
-    }
-  }
   return (
- <>
- <motion.nav initial={{y:-80,opacity:0}} animate={{y:0,opacity:1}} className='fixed left-1/2 -translate-x-1/2 top-6 z-40 hidden md:block'>
- <div className="p-[1px] rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+    <>
+      <motion.header
+        initial={{ y: -25, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        className="fixed top-0 left-0 w-full z-50"
+      >
+        <nav className="
+          max-w-7xl mx-auto
+          px-6 lg:px-10
+          py-6
+          flex items-center justify-between
+        ">
 
- <div className='flex items-center gap-6 py-3 px-2 rounded-full bg-[#0B0F1A]/80 backdrop-blur-xl border border-white/10'>
- <div className='text-lg font-semibold cursor-pointer pl-2 text-white'>Rohit</div>
- <div className='flex text-white relative gap-2 '> 
-{sections.map((item)=>(
-  <MagnaticItem key={item}  active={active === item}
-                  onClick={()=>handleSectionClick(item)}>
-    {item}
-</MagnaticItem>
-))}
+          {/* LOGO */}
+          <div className="text-white font-bold tracking-[0.3em] text-xs">
+            ROHIT DEVSTACK
+          </div>
 
- </div>
+          {/* DESKTOP LINKS */}
+          <div className="hidden md:flex items-center gap-10 text-xs uppercase tracking-[0.3em] text-zinc-400">
+            {links.map((link, i) => (
+              <a
+                key={i}
+                href={`#${link.toLowerCase()}`}
+                className="relative group hover:text-white transition"
+              >
+                {link}
+                <span className="
+                  absolute left-0 -bottom-2
+                  w-0 h-px
+                  bg-white
+                  group-hover:w-full
+                  transition-all duration-300
+                " />
+              </a>
+            ))}
+          </div>
 
- </div>
-</div>
- </motion.nav>
- <div className="fixed top-5 right-5 z-50 md:hidden">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="p-2 rounded-lg bg-white/10 backdrop-blur text-white"
-        >
-          ☰
-        </button>
-      </div>
-      {isOpen && (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="fixed inset-0 bg-black/80 backdrop-blur-md z-40 flex items-center justify-center md:hidden"
-  >
-    <motion.div
-      initial={{ y: 40, scale: 0.95, opacity: 0 }}
-      animate={{ y: 0, scale: 1, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 120, damping: 15 }}
-      className="bg-[#0B0F1A]/90 backdrop-blur-xl rounded-2xl p-6 w-72 space-y-4 text-center border border-white/10 shadow-2xl"
-    >
-      {sections.map((section, index) => (
-        <motion.div
-          key={section}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: index * 0.05 }}
-          onClick={()=>{setIsOpen(false),handleSectionClick(section)}}
-          className={`relative px-4 py-2 rounded-lg text-lg capitalize cursor-pointer transition-all
-            ${
-              active === section
-                ? "bg-white/10 text-white"
-                : "text-gray-400 hover:text-white hover:bg-white/5"
-            }`}
-        >
-          {section}
-        </motion.div>
-      ))}
-    </motion.div>
-  </motion.div>
-)}
-{type==="portfolio" &&<>
-<section id="Home" className=''><Hero></Hero></section>
-<section id="Projects" className=''><Projects></Projects></section>
-<section id="Skills" className=''><Skills></Skills></section>
-<section id="Contact" className=''><ContactMe/></section></>
-}
- </>
-  )
+          {/* CTA (desktop only) */}
+          <a
+            href="https://wa.me/7009962845"
+            className="
+              hidden md:block
+              text-xs uppercase tracking-[0.3em]
+              text-white
+              border border-white/20
+              px-4 py-2
+              hover:bg-white hover:text-black
+              transition
+            "
+          >
+            Hire Me
+          </a>
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-white text-xl"
+          >
+            {open ? <FiX /> : <FiMenu />}
+          </button>
+
+        </nav>
+      </motion.header>
+
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="
+              fixed top-20 left-0 w-full z-40
+              bg-black/90 backdrop-blur-xl
+              border-t border-white/10
+              md:hidden
+            "
+          >
+            <div className="flex flex-col items-center py-10 gap-8 text-sm uppercase tracking-[0.3em] text-zinc-400">
+
+              {links.map((link, i) => (
+                <a
+                  key={i}
+                  href={`#${link.toLowerCase()}`}
+                  onClick={() => setOpen(false)}
+                  className="hover:text-white transition"
+                >
+                  {link}
+                </a>
+              ))}
+
+              <a
+                href="https://wa.me/7009962845"
+                onClick={() => setOpen(false)}
+                className="
+                  mt-4
+                  text-black bg-white
+                  px-6 py-2
+                  text-xs uppercase tracking-[0.3em]
+                "
+              >
+                Hire Me
+              </a>
+
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
 }

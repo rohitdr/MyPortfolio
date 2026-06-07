@@ -1,170 +1,202 @@
-"use client"
-import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+"use client";
+
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Projects() {
-  
-const projects = [
-  {
-    title: "ChatNova",
-    desc: "Real-time chat app with smooth UX and optimized rendering.",
-    tech: ["React", "Socket.io", "Node.js", "MongoDB","Cloudinary"],
-    features: [
-      "Real-time messaging",
-      "No UI flicker",
-      "Fast chat switching",
-    ],
-    image:"/chatnova.png",
-    live: "https://chat-nova-frontend-4nna.vercel.app/",
-    github: "https://github.com/rohitdr/ChatNova-Frontend.git",
-  },
-  {
-    title: "RecipeRiot",
-    desc: "Recipe discovery platform with search and filtering.",
-    tech: ["React", "Tailwind", "API", "Node.js"],
-    features: [
-      "Dynamic search",
-      "Responsive UI",
-      "Smooth interactions",
-    ],
-    image:"/reciperiot.png",
-    live: "https://recipe-riot-frontend-aed5.vercel.app/",
-    github: "https://github.com/rohitdr/RecipeRiot-Frontend.git",
-  },
-];
-const handleClick=(name)=>{
-router.push(`/${name}`)
-}
-  const router=useRouter();
+  const projects = [
+    {
+      id: "01",
+      title: "LUXE DRIVES",
+      image: "/luxedrives.jpg",
+      category: "Luxury Car Rental Platform",
+    },
+    {
+      id: "02",
+      title: "CHATNOVA",
+      image: "/chatnova.jpg",
+      category: "Real-Time Messaging App",
+    },
+    // {
+    //   id: "03",
+    //   title: "SHYAM LABS",
+    //   image: "/projects/shyamlabs.webp",
+    //   category: "Business Website",
+    // },
+    {
+      id: "04",
+      title: "RECIPE RIOT",
+      image: "reciperiot.jpg",
+      category: "Recipe Discovery Platform",
+    },
+  ];
+
+  const [activeProject, setActiveProject] = useState(projects[0]);
+  const [mobilePreview, setMobilePreview] = useState(null);
+
   return (
-    <section className="relative py-16 px-6  mx-auto overflow-hidden justify-center flex">
+    <section className="bg-black text-white py-20 lg:py-32 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-      <div className="absolute w-[600px] h-[600px] bg-indigo-500/20 blur-3xl rounded-full top-[-200px] left-[-200px]" />
-      <div className="absolute w-[500px] h-[500px] bg-purple-500/20 blur-3xl rounded-full bottom-[-150px] right-[-150px]" />
-      <div className="max-w-6xl">
+        {/* HEADER */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-16 lg:mb-24"
+        >
+          <p className="uppercase tracking-[0.4em] text-xs text-zinc-500 mb-4">
+            Selected Work
+          </p>
 
-    
+          <h2 className="text-5xl lg:text-7xl font-black leading-none">
+            Featured <br />
+            Projects
+          </h2>
+        </motion.div>
 
-      <h2 className="text-4xl md:text-5xl font-bold mb-16 text-white text-center">
-        Projects 🚀
-      </h2>
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
-      <div className="space-y-20">
-        {projects.map((project, index) => (
+          {/* LEFT LIST */}
+          <div>
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                onMouseEnter={() => setActiveProject(project)}
+                onClick={() => setMobilePreview(project)}
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="group cursor-pointer border-b border-white/10 py-6 lg:py-8"
+              >
+                <div className="flex items-center gap-5">
+                  <span className="text-zinc-600 text-sm">
+                    {project.id}
+                  </span>
+
+                  <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold transition-all duration-500 group-hover:translate-x-4">
+                    {project.title}
+                  </h3>
+                </div>
+
+                <p className="text-zinc-500 mt-2 ml-8 lg:ml-10">
+                  {project.category}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* DESKTOP PREVIEW */}
+          <div className="hidden lg:block lg:sticky lg:top-24">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeProject.image}
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.4 }}
+                className="overflow-hidden rounded-3xl border border-white/10 bg-zinc-900"
+              >
+                <img
+                loading="lazy"
+                  src={activeProject.image}
+                  alt={activeProject.title}
+                  className="w-full h-137.5 object-cover"
+                />
+
+                <div className="p-8">
+                  <span className="text-xs uppercase text-zinc-500 tracking-widest">
+                    Featured Project
+                  </span>
+
+                  <h3 className="text-4xl font-bold mt-3">
+                    {activeProject.title}
+                  </h3>
+
+                  <p className="text-zinc-400 mt-3">
+                    {activeProject.category}
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {mobilePreview && (
           <motion.div
-            key={project.title}
-            onClick={()=>{handleClick(project.title)}}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            className={`grid md:grid-cols-2 gap-10 items-center relative  ${
-              index % 2 !== 0 ? "md:flex-row-reverse" : ""
-            }`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 lg:hidden"
+            onClick={() => setMobilePreview(null)}
           >
-
-            {/* Image */}
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-              className="relative rounded-2xl group overflow-hidden border border-white/10 shadow-xl cursor-pointer"
-            >
-                      <img src={project.image} alt={`${project.title} Preview`} />
-                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-    <p className="text-white font-semibold">View Project →</p>
-  </div>
-              <div className="absolute -inset-2  rounded-2xl blur-2xl opacity-30 pointer-events-none" />
-            </motion.a>
-
-            {/* Content Card */}
             <motion.div
-              className="bg-[#0B0F1A]/60 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl space-y-4"
-              initial={{ opacity: 0, x: index % 2 !== 0 ? 60 : -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            
-          
+              initial={{ scale: 0.9, y: 40 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 40 }}
+              transition={{ duration: 0.3 }}
+              className="bg-zinc-900 rounded-2xl overflow-hidden w-full max-w-md border border-white/10"
             >
-              <h3 className="text-2xl md:text-3xl font-semibold text-white">
-                {project.title}
-              </h3>
-              <p className="text-gray-300">{project.desc}</p>
+              <img
+                src={mobilePreview.image}
+                alt={mobilePreview.title}
+                className="w-full h-64 object-cover"
+              />
 
-              {/* Tech Pills (Transparent Gradient like Hero) */}
-           <div className="flex flex-wrap gap-2 mt-2">
-  {project.tech.map((t) => {
-    let bg = "bg-white/10";   // default soft transparent background
-    let text = "text-white";  // default text
+              <div className="p-6">
+                <span className="text-xs text-zinc-500 uppercase tracking-widest">
+                  Project
+                </span>
 
-    // Map each tech to a hero-like color
-    if (t === "React") {
-      bg = "bg-indigo-500/20";
-      text = "text-indigo-300";
-    }
-    if (t === "Node.js") {
-      bg = "bg-purple-500/20";
-      text = "text-purple-300";
-    }
-    if (t === "Socket.io") {
-      bg = "bg-pink-500/20";
-      text = "text-pink-300";
-    }
-    if (t === "MongoDB") {
-      bg = "bg-green-500/20";
-      text = "text-green-300";
-    }
-    if (t === "Cloudinary") {
-      bg = "bg-yellow-500/20";
-      text = "text-yellow-300";
-    }
-    if (t === "Tailwind") {
-      bg = "bg-sky-500/20";
-      text = "text-sky-300";
-    }
+                <h3 className="text-2xl font-bold mt-2">
+                  {mobilePreview.title}
+                </h3>
 
-    return (
-      <motion.span
-        key={t}
-        whileHover={{ scale: 1.1, textShadow: "0 0 6px rgba(255,255,255,0.4)" }}
-        className={`px-3 py-1 text-sm rounded-full font-medium ${bg} ${text} backdrop-blur-sm border border-white/20`}
-      >
-        {t}
-      </motion.span>
-    );
-  })}
-</div>
-              {/* Features */}
-              <ul className="text-gray-400 text-sm space-y-1 mt-2">
-                {project.features.map((f) => (
-                  <li key={f}>• {f}</li>
-                ))}
-              </ul>
-
-              {/* Buttons */}
-              <div className="flex gap-4 pt-4">
-                <motion.a
-                  href={project.live}
-                  target="_blank"
-                  whileHover={{ scale: 1.05, boxShadow: "0 0 20px #6366f1" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium transition-all"
-                >
-                  Live
-                </motion.a>
-                <motion.a
-                  href={project.github}
-                  target="_blank"
-                  whileHover={{ scale: 1.05, boxShadow: "0 0 15px #fff" }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-5 py-2 rounded-xl border border-white/20 text-white text-sm hover:bg-white/10 transition-all"
-                >
-                  GitHub
-                </motion.a>
+                <p className="text-zinc-400 mt-2 text-sm">
+                  {mobilePreview.category}
+                </p>
               </div>
             </motion.div>
           </motion.div>
-        ))}
-      </div>  </div>
+        )}
+      </AnimatePresence>
+      {/* MORE PROJECTS COMING */}
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="mt-20 lg:mt-28 text-center"
+>
+  <div className="relative inline-block">
+
+    {/* subtle glow */}
+    <div className="absolute inset-0 flex justify-center">
+      <div className="h-24 w-24 bg-white/10 blur-2xl rounded-full" />
+    </div>
+
+    <h3 className="text-2xl md:text-4xl font-bold tracking-tight">
+      More Projects Coming Soon
+    </h3>
+
+    <p className="text-zinc-500 mt-4 text-sm md:text-base max-w-md mx-auto">
+      I’m constantly building new digital experiences. Stay tuned for more work.
+    </p>
+
+    {/* animated dots */}
+    <motion.div
+      animate={{ opacity: [0.3, 1, 0.3] }}
+      transition={{ repeat: Infinity, duration: 1.5 }}
+      className="mt-6 text-zinc-500 tracking-[0.3em] text-xs"
+    >
+      ● ● ●
+    </motion.div>
+  </div>
+</motion.div>
     </section>
   );
 }

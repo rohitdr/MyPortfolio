@@ -1,71 +1,98 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import { FaReact, FaNodeJs,  FaJsSquare, } from "react-icons/fa";
-import { DiMongodb } from "react-icons/di";
-import { SiSocketdotio,SiTailwindcss  } from "react-icons/si";
+
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+
+const skills = [
+  { name: "Next.js", level: "Advanced" },
+  { name: "React", level: "Advanced" },
+  { name: "Node.js", level: "Intermediate" },
+  { name: "MongoDB", level: "Intermediate" },
+  { name: "Framer Motion", level: "Advanced" },
+  { name: "Tailwind CSS", level: "Advanced" },
+  { name: "Cloudinary", level: "Intermediate" },
+  { name: "API Development", level: "Advanced" },
+  { name: "React Query", level: "Advanced" },
+  { name: "UI/UX Design", level: "Advanced" },
+];
 
 export default function Skills() {
-  const skills = [
-    { name: "React", icon: <FaReact size={50} color="#61DBFB" />, description: "Building interactive UIs & SPAs" },
-    { name: "Node.js", icon: <FaNodeJs size={50} color="#339933" />, description: "Backend APIs & server logic" },
-    { name: "Socket", icon: <SiSocketdotio size={50} color="#b794f4" />, description: "Real Time Communications" },
-    { name: "TailWind", icon: <SiTailwindcss  size={50} color="#4fd1c5" />, description: "Styling, animations & layouts" },
-    { name: "JavaScript", icon: <FaJsSquare size={50} color="#F7DF1E" />, description: "Logic, DOM & dynamic features" },
-    { name: "MongoDb", icon: <DiMongodb size={50} color="#306998" />, description: "Flexible,Scalable Database" },
- 
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: { opacity: 1, scale: 1 },
-    hover: { scale: 1.15, rotate: 5 },
-  };
-
+  const [skillsLength,setSkillsLength]=useState(6)
   return (
-    <section
-      id="Skills"
-      className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 text-white p-6 overflow-hidden"
-    >
- <div className="absolute w-[600px] h-[600px] bg-indigo-500/20 blur-3xl rounded-full top-[-150px] left-[-150px]" />
-      <div className="absolute w-[500px] h-[500px] bg-purple-500/20 blur-3xl rounded-full bottom-[-100px] right-[-100px]" />
-    
-    
-
-      <motion.h2
-        className="text-3xl font-bold mb-12 z-10 relative"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        My Skills
-      </motion.h2>
-
+ <section className="bg-black text-white py-16 relative">
+   <div className="max-w-7xl mx-auto px-6 lg:px-10">
       <motion.div
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-8 z-10 relative"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
+                initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20"
       >
-        {skills.map((skill) => (
-          <motion.div
-            key={skill.name}
-            className="flex flex-col items-center justify-center p-6 rounded-2xl bg-gray-800/70 shadow-lg border border-white/20 cursor-pointer hover:bg-gray-700/80 transition-colors"
-            variants={itemVariants}
-            whileHover="hover"
-          >
-            {skill.icon}
-            <p className="mt-4 text-sm md:text-lg font-semibold">{skill.name}</p>
-            <p className="mt-1 text-[10px] md:text-sm text-gray-300 text-center">{skill.description}</p>
-          </motion.div>
-        ))}
+        <p className="uppercase tracking-[0.4em] text-zinc-500 text-xs">Exerpertise</p>
+        <h2 className=" text-5xl md:text-7xl font-black mt-4">
+          Skills &
+          <br/>
+          Capabilities
+        </h2>
+
       </motion.div>
-    </section>
+      <AnimatePresence>
+      <div className="grid lg:grid-cols-2 gap-x-20 gap-y-10">
+        {skills.slice(0,skillsLength).map((skill,index)=>{
+  return   <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{opacity:0,x:-30}}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              className="border-b border-white/10 pb-6 flex justify-between items-center group"
+            >
+              <h3 className="text-2xl md:text-3xl font-semibold group-hover:translate-x-2 transition">
+                {skill.name}
+              </h3>
+
+           
+            </motion.div>
+})}
+       
+      </div></AnimatePresence>
+     <div className="flex justify-center items-center py-12">
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    onClick={() =>
+      setSkillsLength((prev) =>
+        prev === skills.length ? 6 : skills.length
+      )
+    }
+    className="
+      relative px-8 py-4 rounded-full
+      text-sm md:text-base font-medium
+      border border-white/10
+      bg-white/5 backdrop-blur-xl
+      text-white
+      overflow-hidden
+      group
+      cursor-pointer
+    "
+  >
+  
+  
+    <span className="relative z-10 flex items-center gap-2">
+      {skillsLength === skills.length ? "Show Less" : "Read More"}
+
+      <motion.span
+        animate={{ y: [0, 4, 0] }}
+        transition={{ repeat: Infinity, duration: 1.2 }}
+        className="text-xs opacity-70"
+      >
+        ↓
+      </motion.span>
+    </span>
+  </motion.button>
+</div>
+   
+   </div>
+ </section>
   );
 }
