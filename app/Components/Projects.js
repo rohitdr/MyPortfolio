@@ -2,34 +2,9 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { projects } from "../projects/data";
 export default function Projects() {
-  const projects = [
-    {
-      id: "01",
-      title: "LUXE DRIVES",
-      image: "/luxedrives.jpg",
-      category: "Luxury Car Rental Platform",
-    },
-    {
-      id: "02",
-      title: "CHATNOVA",
-      image: "/chatnova.jpg",
-      category: "Real-Time Messaging App",
-    },
-    // {
-    //   id: "03",
-    //   title: "SHYAM LABS",
-    //   image: "/projects/shyamlabs.webp",
-    //   category: "Business Website",
-    // },
-    {
-      id: "04",
-      title: "RECIPE RIOT",
-      image: "reciperiot.jpg",
-      category: "Recipe Discovery Platform",
-    },
-  ];
+ 
 
   const [activeProject, setActiveProject] = useState(projects[0]);
   const [mobilePreview, setMobilePreview] = useState(null);
@@ -59,7 +34,7 @@ export default function Projects() {
 
           {/* LEFT LIST */}
           <div>
-            {projects.map((project, index) => (
+            {projects.slice(0,4).map((project, index) => (
               <motion.div
                 key={project.id}
                 onMouseEnter={() => setActiveProject(project)}
@@ -165,7 +140,7 @@ export default function Projects() {
         )}
       </AnimatePresence>
       {/* MORE PROJECTS COMING */}
-<motion.div
+{/* <motion.div
   initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
@@ -174,7 +149,7 @@ export default function Projects() {
 >
   <div className="relative inline-block">
 
-    {/* subtle glow */}
+ 
     <div className="absolute inset-0 flex justify-center">
       <div className="h-24 w-24 bg-white/10 blur-2xl rounded-full" />
     </div>
@@ -187,7 +162,6 @@ export default function Projects() {
       I’m constantly building new digital experiences. Stay tuned for more work.
     </p>
 
-    {/* animated dots */}
     <motion.div
       animate={{ opacity: [0.3, 1, 0.3] }}
       transition={{ repeat: Infinity, duration: 1.5 }}
@@ -196,6 +170,43 @@ export default function Projects() {
       ● ● ●
     </motion.div>
   </div>
+</motion.div> */}
+{/* VIEW ALL PROJECTS */}
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  className="mt-12 flex justify-center"
+>
+  <a
+    href="/projects"
+    className="
+      group relative inline-flex items-center gap-3
+      overflow-hidden rounded-full
+      border border-white/15
+      px-8 py-4
+      text-sm font-semibold uppercase tracking-[0.2em]
+      transition-all duration-500
+      hover:border-white
+    "
+  >
+    {/* Hover Background */}
+    <span className="absolute inset-0 origin-left scale-x-0 bg-white transition-transform duration-500 group-hover:scale-x-100" />
+
+    {/* Text */}
+    <span className="relative z-10 transition-colors duration-500 group-hover:text-black">
+      View All Projects
+    </span>
+
+    {/* Arrow */}
+    <motion.span
+      className="relative z-10 text-lg transition-colors duration-500 group-hover:text-black"
+      whileHover={{ x: 4 }}
+    >
+      →
+    </motion.span>
+  </a>
 </motion.div>
     </section>
   );

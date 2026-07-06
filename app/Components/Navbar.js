@@ -3,11 +3,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
-
+import Link from "next/link";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const links = ["Home", "Projects", "Skills", "Contact"];
+  const links = 
+  [
+   { item:"Home",path:'/'},
+   { item:"Projects", path:'/projects'},
+   { item:"Packages",path:'/pricing'},
+   { item:"Contact",path:'/contact'}
+  ];
 
   return (
     <>
@@ -32,12 +38,12 @@ export default function Navbar() {
           {/* DESKTOP LINKS */}
           <div className="hidden md:flex items-center gap-10 text-xs uppercase tracking-[0.3em] text-zinc-400">
             {links.map((link, i) => (
-              <a
+              <Link
                 key={i}
-                href={`#${link.toLowerCase()}`}
+                href={link.path}
                 className="relative group hover:text-white transition"
               >
-                {link}
+                {link.item}
                 <span className="
                   absolute left-0 -bottom-2
                   w-0 h-px
@@ -45,7 +51,7 @@ export default function Navbar() {
                   group-hover:w-full
                   transition-all duration-300
                 " />
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -93,14 +99,14 @@ export default function Navbar() {
             <div className="flex flex-col items-center py-10 gap-8 text-sm uppercase tracking-[0.3em] text-zinc-400">
 
               {links.map((link, i) => (
-                <a
+                <Link
                   key={i}
-                  href={`#${link.toLowerCase()}`}
+                  href={link.path}
                   onClick={() => setOpen(false)}
                   className="hover:text-white transition"
                 >
-                  {link}
-                </a>
+                  {link.item}
+                </Link>
               ))}
 
               <a

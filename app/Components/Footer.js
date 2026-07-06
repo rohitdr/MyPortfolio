@@ -1,7 +1,13 @@
 "use client"
 import { motion } from "framer-motion";
-
+import Link from "next/link";
 export default function Footer() {
+    const links = 
+  [
+   { item:"Projects", path:'/projects'},
+   { item:"Packages",path:'/pricing'},
+   { item:"Contact",path:'/contact'}
+  ];
   return (
     <footer className="relative bg-black text-white overflow-hidden py-24">
 
@@ -38,15 +44,13 @@ export default function Footer() {
         <p>© {new Date().getFullYear()} Rohit Devstack</p>
 
         <div className="flex gap-6">
-          <a href="#projects" className="hover:text-white transition">
-            Projects
-          </a>
-          <a href="#skills" className="hover:text-white transition">
-            Skills
-          </a>
-          <a href="#contact" className="hover:text-white transition">
-            Contact
-          </a>
+          {links.map((link,i)=>
+            <Link key={i} href={link.path} className="hover:text-white transition">
+           {link.item}
+          </Link>
+          )}
+        
+          
         </div>
 
         <p className="tracking-widest uppercase text-xs">
