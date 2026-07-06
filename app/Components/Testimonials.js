@@ -43,27 +43,25 @@ export default function Testimonials() {
   const [active, setActive] = useState(testimonials[0]);
 
   return (
-    <section className="bg-black text-white py-24 lg:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+  <section className="bg-black text-white overflow-hidden py-16 lg:py-32">
+  <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
 
-        {/* Heading */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="mb-12 lg:mb-20"
+    >
+      <p className="mb-3 text-[11px] uppercase tracking-[0.35em] text-zinc-500">
+        Testimonials
+      </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <p className="uppercase tracking-[0.4em] text-xs text-zinc-500 mb-4">
-            Testimonials
-          </p>
-
-          <h2 className="text-5xl lg:text-7xl font-black leading-none">
-            What Clients
-            <br />
-            Say
-          </h2>
-        </motion.div>
+      <h2 className="text-4xl font-black leading-none sm:text-5xl lg:text-7xl">
+        What Clients
+        <br />
+        Say
+      </h2>
+    </motion.div>
 
         {/* Desktop */}
 
@@ -200,14 +198,16 @@ export default function Testimonials() {
 </div>
 {/* Mobile Testimonials */}
 
-<div className="lg:hidden mt-16">
+{/* Mobile */}
+
+<div className="lg:hidden">
 
   <div
     className="
-      flex gap-5
+      flex gap-4
       overflow-x-auto
       snap-x snap-mandatory
-      pb-4
+      pb-2
       [-ms-overflow-style:none]
       [scrollbar-width:none]
       [&::-webkit-scrollbar]:hidden
@@ -218,47 +218,49 @@ export default function Testimonials() {
 
       <motion.div
         key={item.id}
-        whileTap={{ scale: 0.98 }}
+        whileTap={{ scale: .98 }}
         className="
-          min-w-[90%]
-          snap-center
-          rounded-[30px]
-          border
-          border-white/10
-          bg-zinc-950
-          p-8
-        "
+  relative
+  flex flex-col
+  min-h-[380px]
+  min-w-[88%]
+  snap-center
+  rounded-[26px]
+  border border-white/10
+  bg-zinc-950
+  p-6
+"
       >
 
-        <span className="text-[100px] leading-none text-white/5 font-black">
+        <span className="absolute right-5 top-2 text-[90px] font-black leading-none text-white/5">
           "
         </span>
 
-        <p className="text-xl leading-9 -mt-10">
-          {item.review}
-        </p>
+       <p className="relative z-10 flex-1 text-lg leading-8">
+  {item.review}
+</p>
 
-        <div className="mt-10 border-t border-white/10 pt-6">
+     <div className="mt-auto border-t border-white/10 pt-5">
 
           <div className="flex items-center justify-between">
 
             <div>
 
-              <h3 className="text-xl font-bold">
+              <h3 className="text-lg font-bold">
                 {item.name}
               </h3>
 
-              <p className="mt-1 text-zinc-500">
+              <p className="mt-1 text-sm text-zinc-500">
                 {item.role}
               </p>
 
-              <p className="text-zinc-600 text-sm">
+              <p className="text-sm text-zinc-600">
                 {item.company}
               </p>
 
             </div>
 
-            <div className="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-sm">
               {item.id}
             </div>
 
@@ -272,61 +274,45 @@ export default function Testimonials() {
 
   </div>
 
-  {/* Swipe Hint */}
-
-  <p className="mt-8 text-center text-xs uppercase tracking-[0.35em] text-zinc-500">
-    ← Swipe to read more →
+  <p className="mt-6 text-center text-[10px] uppercase tracking-[0.35em] text-zinc-500">
+    Swipe →
   </p>
 
 </div>
 {/* Bottom Statistics */}
 
 <motion.div
-  initial={{ opacity: 0, y: 30 }}
+  initial={{ opacity: 0, y: 20 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true }}
-  transition={{ duration: 0.5 }}
-  className="mt-28 border-t border-white/10 pt-14"
+  className="mt-20 border-t border-white/10 pt-10 lg:mt-28 lg:pt-14"
 >
 
-  <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+  <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-10">
 
     {[
-      {
-        value: "10+",
-        label: "Projects Delivered",
-      },
-      {
-        value: "100%",
-        label: "Client Satisfaction",
-      },
-      {
-        value: "2+",
-        label: "Years Experience",
-      },
-      {
-        value: "24/7",
-        label: "Support",
-      },
-    ].map((item, index) => (
+      ["10+", "Projects Delivered"],
+      ["100%", "Client Satisfaction"],
+      ["2+", "Years Experience"],
+      ["24/7", "Support"],
+    ].map(([value, label], index) => (
 
       <motion.div
-        key={item.label}
+        key={label}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: index * 0.08 }}
-        className="group"
       >
 
-        <h3 className="text-5xl lg:text-7xl font-black transition-transform duration-300 group-hover:-translate-y-1">
-          {item.value}
+        <h3 className="text-4xl font-black sm:text-5xl lg:text-7xl">
+          {value}
         </h3>
 
-        <div className="mt-4 h-px w-12 bg-white/20 transition-all duration-300 group-hover:w-20 group-hover:bg-white" />
+        <div className="mt-3 h-px w-10 bg-white/20 lg:w-14" />
 
-        <p className="mt-4 text-zinc-500 uppercase tracking-[0.15em] text-sm">
-          {item.label}
+        <p className="mt-3 text-xs uppercase tracking-[0.18em] text-zinc-500 lg:text-sm">
+          {label}
         </p>
 
       </motion.div>

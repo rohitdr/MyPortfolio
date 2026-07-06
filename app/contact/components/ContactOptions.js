@@ -43,89 +43,122 @@ export default function ContactOptions() {
   ];
 
   return (
-    <section
-      id="contact-options"
-      className="max-w-7xl mx-auto px-6 lg:px-10 py-28"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mb-16"
-      >
-        <p className="uppercase tracking-[0.35em] text-xs text-zinc-500">
-          Contact Options
-        </p>
+  <section
+  id="contact-options"
+  className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10 py-16 lg:py-28"
+>
+  {/* Heading */}
 
-        <h2 className="mt-5 text-5xl lg:text-7xl font-black leading-none">
-          Choose Your
-          <br />
-          Preferred Way
-        </h2>
-      </motion.div>
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="mb-10 lg:mb-16"
+  >
+    <p className="text-[11px] uppercase tracking-[0.35em] text-zinc-500">
+      Contact Options
+    </p>
 
-      <div className="grid lg:grid-cols-3 gap-8">
+    <h2 className="mt-4 text-4xl font-black leading-none sm:text-5xl lg:mt-5 lg:text-7xl">
+      Choose Your
+      <br />
+      Preferred Way
+    </h2>
+  </motion.div>
 
-        {options.map((item, index) => {
-          const Icon = item.icon;
+  {/* Cards */}
 
-          return (
-            <motion.a
-              key={item.title}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              className={`group rounded-[36px] border p-10 transition-all duration-300 ${
+  <div className="grid gap-5 lg:grid-cols-3 lg:gap-8">
+
+    {options.map((item, index) => {
+      const Icon = item.icon;
+
+      return (
+        <motion.a
+          key={item.title}
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.08 }}
+          whileHover={{ y: -8 }}
+          className={`
+            group
+            flex flex-col
+            rounded-[26px] lg:rounded-[36px]
+            border
+            p-6 sm:p-8 lg:p-10
+            transition-all duration-300
+            ${
+              item.featured
+                ? "border-white bg-white text-black"
+                : "border-white/10 bg-zinc-950 hover:border-white/30"
+            }
+          `}
+        >
+          {/* Icon */}
+
+          <div
+            className={`
+              flex h-14 w-14 items-center justify-center
+              rounded-2xl
+              lg:h-16 lg:w-16
+              ${
                 item.featured
-                  ? "bg-white text-black border-white"
-                  : "border-white/10 bg-zinc-950 hover:border-white/30"
-              }`}
-            >
-              <div
-                className={`flex h-16 w-16 items-center justify-center rounded-2xl ${
-                  item.featured
-                    ? "bg-black text-white"
-                    : "bg-white/5 text-white"
-                }`}
-              >
-                <Icon size={28} />
-              </div>
+                  ? "bg-black text-white"
+                  : "bg-white/5 text-white"
+              }
+            `}
+          >
+            <Icon size={24} />
+          </div>
 
-              <p
-                className={`mt-8 uppercase tracking-[0.3em] text-xs ${
-                  item.featured ? "text-black/60" : "text-zinc-500"
-                }`}
-              >
-                {item.subtitle}
-              </p>
+          {/* Subtitle */}
 
-              <h3 className="mt-4 text-3xl font-black">
-                {item.title}
-              </h3>
+          <p
+            className={`mt-6 text-[11px] uppercase tracking-[0.3em] ${
+              item.featured ? "text-black/60" : "text-zinc-500"
+            }`}
+          >
+            {item.subtitle}
+          </p>
 
-              <p
-                className={`mt-6 leading-8 ${
-                  item.featured ? "text-black/70" : "text-zinc-400"
-                }`}
-              >
-                {item.description}
-              </p>
+          {/* Title */}
 
-              <div className="mt-10 flex items-center gap-3 font-medium">
-                {item.button}
+          <h3 className="mt-3 text-2xl font-black lg:mt-4 lg:text-3xl">
+            {item.title}
+          </h3>
 
-                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
-            </motion.a>
-          );
-        })}
+          {/* Description */}
 
-      </div>
-    </section>
+          <p
+            className={`mt-4 flex-1 text-sm leading-7 lg:mt-6 lg:text-base lg:leading-8 ${
+              item.featured ? "text-black/70" : "text-zinc-400"
+            }`}
+          >
+            {item.description}
+          </p>
+
+          {/* CTA */}
+
+          <div className="mt-8 flex items-center justify-between border-t border-current/10 pt-5">
+
+            <span className="text-sm font-medium uppercase tracking-[0.18em]">
+              {item.button}
+            </span>
+
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-current/20 transition-transform duration-300 group-hover:translate-x-1">
+              <FaArrowRight size={14} />
+            </div>
+
+          </div>
+        </motion.a>
+      );
+    })}
+
+  </div>
+</section>
   );
 }

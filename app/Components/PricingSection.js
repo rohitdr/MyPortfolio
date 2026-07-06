@@ -64,6 +64,12 @@ const plans = [
 ];
 
 export default function PricingSection() {
+  const handleClick=()=>{
+      window.open(
+    `https://wa.me/917009962845`,
+    "_blank"
+  );
+  }
   return (
     <section className="bg-black text-white py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -146,6 +152,7 @@ export default function PricingSection() {
         </div>
 
         <button
+        onClick={handleClick}
           className={`mt-8 w-full rounded-full border py-4 transition ${
             plan.featured
               ? "border-black hover:bg-black hover:text-white"
@@ -200,7 +207,7 @@ export default function PricingSection() {
 
       </div>
 
-      <button className="mt-12 flex items-center gap-4 rounded-full border border-black px-8 py-4 hover:bg-black hover:text-white transition">
+      <button onClick={handleClick} className="mt-12 flex items-center gap-4 rounded-full border border-black px-8 py-4 hover:bg-black hover:text-white transition">
         <span className="uppercase tracking-[0.2em] text-sm">
           Start Project
         </span>
@@ -246,7 +253,7 @@ export default function PricingSection() {
           ))}
         </div>
 
-        <button className="mt-8 flex items-center gap-3 text-sm uppercase tracking-[0.2em]">
+        <button onClick={handleClick} className="mt-8 flex items-center gap-3 text-sm uppercase tracking-[0.2em]">
           Start Project
           <FaArrowRight />
         </button>

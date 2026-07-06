@@ -13,9 +13,9 @@ export default function page() {
    <div className="bg-black min-h-screen text-white">
    <PricingHero></PricingHero>
    <PackagePreview></PackagePreview>
-<PackageSection plan={packages[0]}></PackageSection>
+{/* <PackageSection plan={packages[0]}></PackageSection>
 <PackageSection plan={packages[1]}></PackageSection>
-<PackageSection plan={packages[2]}></PackageSection>
+<PackageSection plan={packages[2]}></PackageSection> */}
   <ComparisonTable></ComparisonTable>
   <DevelopmentProcess></DevelopmentProcess>
   <FAQ></FAQ>

@@ -84,7 +84,7 @@ export const comparison = [
   ["Authentication", false, false, true],
   ["API Integration", false, false, true],
   ["Payment Gateway", false, false, true],
-  ["Support", "1 Month", "3 Months", "6 Months"],
+  ["Support", "1 Month", "2 Months", "3 Months"],
 ];
 
 export const faqs = [

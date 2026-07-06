@@ -7,10 +7,9 @@ export default function PackageSection({ plan, reverse = false }) {
   return (
     <section
       id={plan.id}
-      className="max-w-7xl mx-auto px-6 lg:px-10 py-28 border-t border-white/10"
-    >
+className="mx-auto max-w-7xl border-t border-white/10 px-5 sm:px-6 lg:px-10 py-16 lg:py-28 overflow-hidden"    >
       <div
-        className={`grid lg:grid-cols-2 gap-20 items-center ${
+        className={`grid gap-12 lg:grid-cols-2 gap-20 items-center ${
           reverse ? "lg:[&>*:first-child]:order-2" : ""
         }`}
       >
@@ -25,11 +24,11 @@ export default function PackageSection({ plan, reverse = false }) {
             {plan.name} Package
           </p>
 
-          <h2 className="mt-6 text-6xl lg:text-8xl font-black leading-none">
+          <h2 className="mt-5 break-words text-5xl sm:text-6xl lg:text-8xl font-black leading-none">
             {plan.price}
           </h2>
 
-          <p className="mt-8 text-zinc-400 text-xl leading-9 max-w-xl">
+          <p className="mt-6 max-w-xl text-base leading-8 text-zinc-400 lg:mt-8 lg:text-xl lg:leading-9">
             {plan.tag}
           </p>
 
@@ -38,7 +37,7 @@ export default function PackageSection({ plan, reverse = false }) {
             {plan.idealFor.map((item) => (
               <span
                 key={item}
-                className="rounded-full border border-white/10 px-5 py-3 text-sm"
+                className="max-w-full break-words rounded-full border border-white/10 px-4 py-2 text-xs sm:px-5 sm:py-3 sm:text-sm"
               >
                 {item}
               </span>
@@ -75,7 +74,7 @@ export default function PackageSection({ plan, reverse = false }) {
           initial={{ opacity: 0, x: reverse ? -60 : 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="rounded-[36px] border border-white/10 bg-zinc-950 p-10 lg:p-12"
+      className="rounded-[28px] lg:rounded-[36px] border border-white/10 bg-zinc-950 p-6 sm:p-8 lg:p-12 overflow-hidden"
         >
           <p className="uppercase tracking-[0.3em] text-xs text-zinc-500">
             Everything Included
@@ -87,13 +86,13 @@ export default function PackageSection({ plan, reverse = false }) {
 
               <div
                 key={feature}
-                className="flex items-center gap-5 border-b border-white/5 pb-5 last:border-none"
+              className="flex items-start gap-4 border-b border-white/5 pb-5 last:border-none"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10">
                   <FaCheck size={14} />
                 </div>
 
-                <span className="text-lg">
+             <span className="flex-1 break-words text-base lg:text-lg">
                   {feature}
                 </span>
               </div>
