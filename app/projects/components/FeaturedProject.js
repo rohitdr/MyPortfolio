@@ -113,7 +113,8 @@ export default function FeaturedProject() {
         <div className="mt-8 flex flex-col gap-3">
 
           <a
-            href={`/projects/${project.slug}`}
+            // href={`/projects/${project.slug}`}
+            href="/"
             className="group flex h-14 items-center justify-center gap-3 rounded-full bg-white font-medium text-black"
           >
             View Case Study

@@ -65,7 +65,8 @@ export default function ProjectsGrid() {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <a
-              href={`/projects/${project.slug}`}
+              // href={`/projects/${project.slug}`}
+              href="/"
               className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-4 text-black transition hover:scale-105"
             >
               View Case Study

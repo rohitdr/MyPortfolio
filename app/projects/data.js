@@ -33,7 +33,7 @@ export const projects = [
 
     year: "2025",
 
-    live: "#",
+    live: "https://www.inquistivemindacademy.com/",
 
     color: "dark",
   },
@@ -70,7 +70,7 @@ export const projects = [
 
     year: "2025",
 
-    live: "https://shyambudgetfriendlylabs.com",
+    live: "https://www.shyambudgetfriendlylabs.com/",
 
     color: "dark",
   },
@@ -178,7 +178,7 @@ export const projects = [
 
     year: "2025",
 
-    live: "#",
+    live: "https://chat-nova-frontend-4nna.vercel.app/login",
 
     color: "dark",
   },
@@ -214,7 +214,7 @@ export const projects = [
 
     year: "2025",
 
-    live: "#",
+    live: "https://recipe-riot-frontend-aed5.vercel.app/",
 
     color: "dark",
   },
