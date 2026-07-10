@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowRight, FaChevronDown } from "react-icons/fa6";
 import { projects } from "../data";
+import Link from "next/link";
 
 export default function ProjectsGrid() {
   const [showAll, setShowAll] = useState(false);
@@ -64,15 +65,15 @@ export default function ProjectsGrid() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              // href={`/projects/${project.slug}`}
-              href="/"
+            <Link
+              href={`/projects/${project.slug}`}
+           
               className="group inline-flex items-center gap-3 rounded-full bg-white px-6 py-4 text-black transition hover:scale-105"
             >
               View Case Study
 
               <FaArrowRight className="transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
 
             <a
               href={project.live}
