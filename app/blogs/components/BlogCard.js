@@ -19,7 +19,7 @@ export default function BlogCard({ blog, index = 0 }) {
       }}
       className="group"
     >
-      <Link href={`/blogs/${blog.slug}`}>
+      <Link href={`/blogs/blog/${blog.slug}`}>
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-white/10">
           <Image

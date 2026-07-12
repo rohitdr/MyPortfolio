@@ -25,7 +25,7 @@ export default function RelatedBlogs({ blogs = [] }) {
         {blogs.map((blog) => (
           <Link
             key={blog.id}
-            href={`/blog/${blog.slug}`}
+            href={`/blogs/blog/${blog.slug}`}
             className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] transition hover:border-white/20"
           >
             {/* Image */}

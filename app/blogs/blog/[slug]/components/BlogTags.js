@@ -16,7 +16,8 @@ export default function BlogTags({ tags = [] }) {
           {tags.map((tag) => (
             <Link
               key={tag}
-              href={`/blogs?tag=${encodeURIComponent(tag)}`}
+              // href={`/blogs?tag=${encodeURIComponent(tag)}`}
+              href={`/blogs`}
               className="
                 rounded-full
                 border

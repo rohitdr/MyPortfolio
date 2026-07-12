@@ -545,6 +545,7 @@ outcome:
     "/projects/chatnova/3.webp",
     "/projects/chatnova/4.webp",
     "/projects/chatnova/5.webp",
+    "/projects/chatnova/6.webp",
   ],
 
   description:
@@ -710,6 +711,7 @@ outcome:
     "/projects/recipe-riot/3.webp",
     "/projects/recipe-riot/4.webp",
     "/projects/recipe-riot/5.webp",
+    "/projects/recipe-riot/6.webp",
   ],
 
   description:

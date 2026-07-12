@@ -35,6 +35,7 @@ export default async function BlogPage({ blog,relatedBlogs,next,previous }) {
 
           <ShareArticle
             title={blog.title}
+            url={`https://www.rohitdevstack.online/blogs/blog/${blog.slug}`}
           />
 
           <AuthorCard author={author} />
