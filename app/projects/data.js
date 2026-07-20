@@ -1,4 +1,5 @@
 export const projects = [
+
   
  {
   id: 1,
@@ -489,6 +490,178 @@ outcome:
 
   color: "white",
 },
+ {
+  id: 4,
+
+  slug: "dk-bhangal-laboratory",
+
+  featured: false,
+
+  title: "DK BHANGAL LABORATORY & ECG",
+
+  category: "Healthcare & Diagnostic Laboratory",
+
+  image: "/dkbhangallab.webp",
+
+  gallery: [
+    "/projects/dk-bhangal-laboratory/1.webp",
+    "/projects/dk-bhangal-laboratory/2.webp",
+    "/projects/dk-bhangal-laboratory/3.webp",
+    "/projects/dk-bhangal-laboratory/4.webp",
+    "/projects/dk-bhangal-laboratory/5.webp",
+    "/projects/dk-bhangal-laboratory/6.webp",
+  ],
+
+  description:
+    "DK Bhangal Laboratory & ECG is a modern healthcare diagnostic platform developed to provide patients with easy access to laboratory services, preventive health packages, pathology testing, ECG services, home sample collection, and health education. The website combines an informative medical portal with strong local SEO to improve online visibility and patient engagement.",
+
+  overview:
+    "The project was designed to establish a strong digital presence for a trusted diagnostic laboratory while making healthcare information and laboratory services easily accessible. The platform enables patients to explore diagnostic tests, compare preventive health packages, read educational health blogs, find nearby service locations, and request home sample collection through a fast, responsive, and SEO-optimized website.",
+
+  challenge:
+    "Traditional diagnostic laboratories often struggle with limited online visibility, outdated websites, poor mobile experiences, and difficulty helping patients discover services through search engines. The challenge was to build a modern healthcare platform that would generate organic traffic, educate patients, showcase laboratory services, improve local search rankings, and simplify appointment inquiries while maintaining excellent performance and accessibility.",
+
+  solution:
+    "A fully responsive healthcare website was developed using Next.js with a strong focus on SEO, performance, accessibility, and user experience. The platform includes dynamic laboratory test pages, preventive health package listings, city-specific location pages, educational medical blogs, reusable UI components, structured data (Schema.org), optimized metadata, Open Graph integration, image optimization, and fast-loading pages. Every page was carefully optimized for Google's Core Web Vitals and local healthcare search intent.",
+
+  outcome:
+    "Successfully transformed DK Bhangal Laboratory into a modern digital healthcare brand with a highly optimized SEO website, improved local search visibility, faster patient access to laboratory services, better engagement through educational content, and a scalable platform capable of supporting future expansion across multiple service locations.",
+
+  technologies: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "JavaScript",
+    "Framer Motion",
+    "Schema.org",
+    "Open Graph",
+    "Vercel",
+  ],
+
+  techStack: [
+    {
+      category: "Frontend",
+      items: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Framer Motion",
+      ],
+    },
+    {
+      category: "SEO & Performance",
+      items: [
+        "Technical SEO",
+        "Schema Markup",
+        "Metadata API",
+        "Open Graph",
+        "Twitter Cards",
+        "Core Web Vitals",
+      ],
+    },
+    {
+      category: "Content Management",
+      items: [
+        "Dynamic Blog System",
+        "Health Packages",
+        "Laboratory Services",
+        "Location Pages",
+      ],
+    },
+    {
+      category: "Deployment",
+      items: [
+        "Vercel",
+        "GitHub",
+        "Cloudflare",
+      ],
+    },
+  ],
+
+  features: [
+    "SEO Optimized Website",
+    "Dynamic Laboratory Service Pages",
+    "Health Package Directory",
+    "Medical Blog System",
+    "Location-Based Landing Pages",
+    "Local SEO Optimization",
+    "Structured Data (Schema.org)",
+    "Home Sample Collection Information",
+    "Responsive Design",
+    "Fast Loading Performance",
+    "Open Graph & Social Sharing",
+    "Modern UI/UX",
+    "Reusable Components",
+    "Optimized Images",
+    "Contact & Inquiry Forms",
+  ],
+
+  process: [
+    {
+      title: "Research & Planning",
+      description:
+        "Conducted research on diagnostic laboratory websites, patient search behavior, local SEO opportunities, and healthcare content strategy to build an effective digital platform.",
+    },
+    {
+      title: "UI/UX Design",
+      description:
+        "Designed a clean, professional, and trustworthy healthcare interface focused on improving user navigation, readability, and mobile experience for patients of all age groups.",
+    },
+    {
+      title: "Development",
+      description:
+        "Developed the website using Next.js with reusable components, dynamic routing, optimized images, structured content architecture, and responsive layouts for all devices.",
+    },
+    {
+      title: "SEO & Optimization",
+      description:
+        "Implemented advanced on-page SEO, structured data, metadata optimization, local SEO strategies, Open Graph integration, sitemap generation, performance enhancements, and accessibility improvements before deployment.",
+    },
+  ],
+
+  results: [
+    {
+      value: "95+",
+      label: "Performance",
+      description:
+        "Achieved excellent Lighthouse scores through optimized assets, image compression, server-side rendering, and efficient code splitting.",
+    },
+    {
+      value: "100%",
+      label: "Responsive",
+      description:
+        "Fully optimized for desktop, tablet, and mobile devices with a seamless user experience across all screen sizes.",
+    },
+    {
+      value: "SEO",
+      label: "Optimized",
+      description:
+        "Implemented comprehensive technical SEO including metadata, Schema.org, Open Graph, sitemap, robots.txt, canonical URLs, and local SEO optimization.",
+    },
+    {
+      value: "20+",
+      label: "Landing Pages",
+      description:
+        "Developed scalable service pages, city-specific location pages, laboratory packages, and educational medical blogs for long-term organic growth.",
+    },
+  ],
+
+  testimonial: {
+    quote:
+      "The new website has significantly improved our online presence and made it much easier for patients to discover our laboratory services, health packages, and educational resources. The modern design and SEO optimization have exceeded our expectations.",
+    name: "DK Bhangal Laboratory",
+    role: "Management Team",
+    company: "DK Bhangal Laboratory & ECG",
+  },
+
+  year: "2026",
+
+  live: "https://www.dkbhangallab.com",
+
+  github: "",
+
+  color: "blue",
+},
   //    {
   //   id: 4,
 
@@ -853,7 +1026,8 @@ outcome:
   github: "",
 
   color: "dark",
-}
+},
+ 
 
 
 

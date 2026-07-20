@@ -17,11 +17,14 @@ export default function BlogCard({ blog, index = 0 }) {
         duration: 0.6,
         delay: index * 0.08,
       }}
-      className="group"
+      className="group h-full"
     >
-      <Link href={`/blogs/blog/${blog.slug}`}>
+      <Link
+        href={`/blogs/blog/${blog.slug}`}
+        className="flex h-full flex-col"
+      >
         {/* Image */}
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.75rem] border border-white/10">
+        <div className="relative h-64 overflow-hidden rounded-[1.75rem] border border-white/10">
           <Image
             src={blog.thumbnail || blog.coverImage}
             alt={blog.title}
@@ -39,7 +42,8 @@ export default function BlogCard({ blog, index = 0 }) {
         </div>
 
         {/* Content */}
-        <div className="mt-6">
+        <div className="mt-6 flex flex-1 flex-col">
+
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] text-zinc-500">
             <span>{blog.publishedAt}</span>
@@ -53,38 +57,45 @@ export default function BlogCard({ blog, index = 0 }) {
           </div>
 
           {/* Title */}
-          <h3 className="mt-4 text-2xl font-light leading-tight text-white transition group-hover:text-zinc-300">
+          <h3 className="mt-4 min-h-[64px] line-clamp-2 text-2xl font-light leading-tight text-white transition group-hover:text-zinc-300">
             {blog.title}
           </h3>
 
           {/* Description */}
-          <p className="mt-4 line-clamp-3 leading-8 text-zinc-400">
+          <p className="mt-4 min-h-[96px] line-clamp-3 leading-8 text-zinc-400">
             {blog.excerpt}
           </p>
 
           {/* Tags */}
-          <div className="mt-6 flex flex-wrap gap-2">
-            {blog.tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-zinc-500"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+        <div className="mt-6 flex flex-wrap gap-2 py-2">
+  {blog.tags?.slice(0, 2).map((tag) => (
+    <span
+      key={tag}
+      className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-zinc-500"
+    >
+      {tag}
+    </span>
+  ))}
+
+  {blog.tags?.length > 2 && (
+    <span className="rounded-full bg-zinc-800 px-3 py-1.5 text-xs text-zinc-400">
+      +{blog.tags.length - 2}
+    </span>
+  )}
+</div>
 
           {/* Footer */}
-          <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
-            <p className="text-sm text-zinc-500">
-              {blog.author}
+          <div className="mt-auto flex items-center justify-between border-t border-white/10 pt-6">
+            <p className="truncate text-sm text-zinc-500">
+              {blog.author?.name || blog.author}
             </p>
 
-            <span className="flex items-center gap-2 text-sm font-medium text-white transition group-hover:gap-3">
+            <span className="flex items-center gap-2 text-sm font-medium text-white transition-all duration-300 group-hover:gap-3">
               Read
               <FaArrowRight size={13} />
             </span>
           </div>
+
         </div>
       </Link>
     </motion.article>

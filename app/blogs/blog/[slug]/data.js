@@ -2016,6 +2016,518 @@ router.post(
 
   ]
 },
+{
+  id: 3,
+
+  slug: "10-seo-mistakes-that-are-hurting-your-website",
+
+  title: "10 SEO Mistakes That Are Hurting Your Website",
+
+  category: "SEO",
+
+  featured: false,
+
+  readTime: "12 min read",
+
+  publishedAt: "2026-07-20",
+
+  updatedAt: "2026-07-20",
+   author: "Rohit Kumar",
+
+ 
+
+  coverImage:
+    "/blogs/10-seo-mistakes-that-are-hurting-your-website-cover.webp",
+
+  excerpt:
+    "Discover the 10 most common SEO mistakes that prevent websites from ranking on Google. Learn practical solutions to improve search visibility, increase organic traffic, and create a strong technical SEO foundation.",
+
+  seo: {
+    title:
+      "10 SEO Mistakes That Are Hurting Your Website | Complete SEO Guide",
+
+    description:
+      "Learn the 10 biggest SEO mistakes that hurt your Google rankings and discover practical strategies to improve technical SEO, on-page optimization, website performance, and user experience.",
+
+    keywords: [
+      "SEO mistakes",
+      "Common SEO errors",
+      "Technical SEO",
+      "On Page SEO",
+      "Website SEO Guide",
+      "Google Ranking Tips",
+      "SEO Best Practices",
+      "Website Optimization",
+      "Improve SEO",
+      "SEO for Business Website",
+      "Next.js SEO",
+      "Organic Traffic",
+      "Search Engine Optimization",
+      "SEO Checklist",
+      "Website Performance",
+    ],
+  },
+
+  tags: [
+    "SEO",
+    "Technical SEO",
+    "Google",
+    "Website Optimization",
+    "Digital Marketing",
+    "Next.js",
+    "Search Engine Optimization",
+  ],
+
+  introduction: [
+    "Many business owners invest in building beautiful websites but struggle to attract visitors from Google. In most cases, the problem isn't the design—it's SEO. Even small optimization mistakes can prevent search engines from properly understanding, indexing, and ranking your website.",
+
+    "Search Engine Optimization is more than simply adding keywords to a page. Modern SEO involves technical performance, user experience, structured content, website architecture, mobile responsiveness, and high-quality information that satisfies search intent. Ignoring any of these areas can significantly reduce your visibility in search results.",
+
+    "Whether you own a business website, portfolio, eCommerce store, or SaaS platform, avoiding common SEO mistakes can dramatically improve your organic traffic and generate more qualified leads. In this guide, we'll explore ten of the most common SEO mistakes, explain why they affect rankings, and provide actionable solutions you can implement today."
+  ],
+  content: [
+  {
+    type: "heading",
+    level: 2,
+    text: "1. Ignoring Keyword Research",
+  },
+
+  {
+    type: "paragraph",
+    text: "One of the biggest SEO mistakes businesses make is creating content without understanding what their audience is actually searching for. Keyword research is the foundation of every successful SEO strategy because it helps you discover the exact terms people use on search engines. Publishing articles or service pages based only on assumptions often results in content that receives little to no organic traffic.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Modern keyword research isn't about finding the highest search volume keyword. Instead, it's about identifying search intent. A visitor searching for 'best web developer near me' has a completely different intent than someone searching for 'how websites work.' Creating content that matches user intent increases your chances of ranking higher and converting visitors into customers.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Before creating any page, research primary keywords, related keywords, long-tail phrases, and common questions. Organize them naturally throughout your headings, content, meta title, and description instead of forcing keywords repeatedly into the article.",
+  },
+
+  {
+    type: "tips",
+    title: "Best Practices",
+    items: [
+      "Research keywords before writing content.",
+      "Target one primary keyword per page.",
+      "Use related keywords naturally.",
+      "Focus on search intent instead of keyword stuffing.",
+      "Include long-tail keywords for easier rankings.",
+    ],
+  },
+
+  {
+    type: "heading",
+    level: 2,
+    text: "2. Publishing Thin or Low-Quality Content",
+  },
+
+  {
+    type: "paragraph",
+    text: "Search engines reward content that provides genuine value to users. Pages with only a few paragraphs, duplicated information, or AI-generated text without editing rarely perform well in competitive search results. Google's algorithms prioritize helpful, trustworthy, and comprehensive content that answers users' questions better than competing pages.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Instead of publishing dozens of short articles, focus on creating detailed resources that solve real problems. Include practical examples, clear explanations, images, FAQs, internal links, and actionable advice. High-quality content naturally earns backlinks, increases user engagement, and encourages visitors to spend more time on your website.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Each page on your website should have a clear purpose. Whether it's a service page, blog article, or landing page, ensure the content is original, well-structured, and significantly more useful than similar pages already ranking on Google.",
+  },
+
+  {
+    type: "tips",
+    title: "Best Practices",
+    items: [
+      "Write comprehensive and original content.",
+      "Answer common user questions.",
+      "Add visuals and examples where relevant.",
+      "Update older articles regularly.",
+      "Avoid duplicate or copied content.",
+    ],
+  },
+
+  {
+    type: "heading",
+    level: 2,
+    text: "3. Poor Website Speed and Performance",
+  },
+
+  {
+    type: "paragraph",
+    text: "Website speed directly affects both user experience and search engine rankings. Visitors expect websites to load within a few seconds, and delays often result in higher bounce rates. Google also considers Core Web Vitals and overall performance when evaluating pages, making speed optimization an essential part of technical SEO.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Slow websites are commonly caused by oversized images, excessive JavaScript, unused CSS, poor hosting, and unnecessary third-party scripts. Optimizing these elements improves loading speed, reduces server requests, and creates a smoother browsing experience across desktop and mobile devices.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Modern frameworks such as Next.js simplify performance optimization through server-side rendering, automatic image optimization, code splitting, and static generation. Combined with proper caching and CDN usage, these techniques can dramatically improve website performance.",
+  },
+
+  {
+    type: "tips",
+    title: "Best Practices",
+    items: [
+      "Compress and optimize all images.",
+      "Use modern image formats like WebP.",
+      "Minify CSS and JavaScript.",
+      "Reduce unnecessary third-party scripts.",
+      "Monitor Core Web Vitals regularly.",
+    ],
+  },
+    {
+    type: "heading",
+    level: 2,
+    text: "4. Missing or Poorly Optimized Meta Titles and Descriptions",
+  },
+
+  {
+    type: "paragraph",
+    text: "Your page title and meta description are often the first things users see in Google Search results. If they are missing, duplicated, or poorly written, your website may receive fewer clicks even if it ranks well. An optimized title clearly describes the page while naturally including the primary keyword. A compelling meta description encourages users to visit your website by explaining the value they'll receive.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Many websites either leave these fields empty or use the same title and description across multiple pages. This makes it difficult for search engines to understand the purpose of each page and reduces click-through rates. Every important page should have a unique, descriptive title and an engaging meta description written specifically for that content.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Think of your title and description as your website's advertisement on Google. Even the best content can struggle to attract visitors if people aren't convinced to click your search result.",
+  },
+
+  {
+    type: "tips",
+    title: "Best Practices",
+    items: [
+      "Write a unique title for every page.",
+      "Include the primary keyword naturally.",
+      "Keep titles between 50–60 characters.",
+      "Write compelling meta descriptions around 150–160 characters.",
+      "Avoid duplicate metadata across your website.",
+    ],
+  },
+
+  {
+    type: "heading",
+    level: 2,
+    text: "5. Not Optimizing for Mobile Devices",
+  },
+
+  {
+    type: "paragraph",
+    text: "More than half of all website traffic now comes from smartphones and tablets. Google uses mobile-first indexing, meaning it primarily evaluates the mobile version of your website when determining search rankings. If your website isn't responsive or provides a poor mobile experience, your SEO performance is likely to suffer.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Common mobile usability problems include tiny text, buttons that are difficult to tap, overflowing layouts, slow loading pages, and intrusive popups. These issues frustrate visitors, increase bounce rates, and send negative user experience signals to search engines.",
+  },
+
+  {
+    type: "paragraph",
+    text: "A responsive website automatically adapts to different screen sizes, providing a consistent experience across desktops, tablets, and smartphones. Modern CSS frameworks like Tailwind CSS make it much easier to build responsive layouts from the beginning rather than treating mobile as an afterthought.",
+  },
+
+  {
+    type: "tips",
+    title: "Best Practices",
+    items: [
+      "Adopt a mobile-first design approach.",
+      "Use responsive layouts for every page.",
+      "Ensure buttons and navigation are touch-friendly.",
+      "Test your website on multiple devices.",
+      "Improve loading speed on mobile networks.",
+    ],
+  },
+
+  {
+    type: "heading",
+    level: 2,
+    text: "6. Ignoring Internal Linking",
+  },
+
+  {
+    type: "paragraph",
+    text: "Internal links help both users and search engines discover additional content on your website. They establish relationships between pages, distribute page authority, and make it easier for search engine crawlers to understand your site's structure. Unfortunately, many websites publish excellent content but fail to connect related pages together.",
+  },
+
+  {
+    type: "paragraph",
+    text: "For example, if you write a blog about Technical SEO, it should naturally link to related articles about website speed, schema markup, keyword research, or on-page SEO. Likewise, service pages should link to relevant case studies, testimonials, and contact pages to guide visitors through your website.",
+  },
+
+  {
+    type: "paragraph",
+    text: "A strong internal linking strategy improves user engagement, increases page views, and helps search engines index important content more efficiently. It also distributes authority throughout your website instead of concentrating it on just a few pages.",
+  },
+
+  {
+    type: "tips",
+    title: "Best Practices",
+    items: [
+      "Link related articles together naturally.",
+      "Use descriptive anchor text.",
+      "Keep important pages within three clicks.",
+      "Review internal links regularly.",
+      "Avoid excessive or irrelevant linking.",
+    ],
+  },
+    {
+    type: "heading",
+    level: 2,
+    text: "7. Forgetting Image SEO",
+  },
+
+  {
+    type: "paragraph",
+    text: "Images play a significant role in creating an engaging website, but they can also become one of the biggest SEO problems if they are not properly optimized. Large image files increase page load time, while missing alt text prevents search engines from understanding what the image represents. As a result, your website may lose opportunities to rank in both traditional search results and Google Images.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Every image should have a descriptive file name, meaningful alt text, and appropriate dimensions before being uploaded. Modern formats like WebP help reduce file size without sacrificing quality, improving loading speed and overall user experience. Optimized images contribute to better Core Web Vitals and make your content more accessible for users relying on screen readers.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Image optimization is not just about compression. It's also about providing context to search engines while ensuring your visuals enhance rather than slow down the browsing experience.",
+  },
+
+  {
+    type: "tips",
+    title: "Best Practices",
+    items: [
+      "Use descriptive image file names.",
+      "Write meaningful alt text for every image.",
+      "Compress images before uploading.",
+      "Prefer WebP or AVIF image formats.",
+      "Use responsive images for different screen sizes.",
+    ],
+  },
+
+  {
+    type: "heading",
+    level: 2,
+    text: "8. Not Using Structured Data (Schema Markup)",
+  },
+
+  {
+    type: "paragraph",
+    text: "Structured data, commonly known as Schema Markup, helps search engines understand your website content more accurately. While schema is not a direct ranking factor, it improves how your pages appear in search results through rich snippets such as FAQs, reviews, breadcrumbs, products, articles, and local business information.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Many websites ignore schema completely, missing valuable opportunities to improve click-through rates. For businesses, implementing Local Business schema, Organization schema, Service schema, and FAQ schema can significantly enhance search visibility and provide users with more useful information directly on the search results page.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Modern frameworks like Next.js make implementing JSON-LD structured data straightforward. When combined with proper metadata and technical SEO, schema creates a stronger semantic understanding of your website for search engines.",
+  },
+
+  {
+    type: "tips",
+    title: "Best Practices",
+    items: [
+      "Add JSON-LD Schema Markup.",
+      "Use Organization or Local Business schema.",
+      "Implement Article schema for blogs.",
+      "Include FAQ schema where appropriate.",
+      "Validate schema using Google's Rich Results Test.",
+    ],
+  },
+
+  {
+    type: "heading",
+    level: 2,
+    text: "9. Neglecting Technical SEO",
+  },
+
+  {
+    type: "paragraph",
+    text: "Even exceptional content may struggle to rank if search engines cannot efficiently crawl and index your website. Technical SEO focuses on improving your site's infrastructure so that search engines can easily discover, understand, and prioritize your pages. Unfortunately, many website owners concentrate only on content while overlooking technical issues that limit search performance.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Common technical SEO problems include broken links, duplicate content, missing canonical URLs, incorrect redirects, crawl errors, missing XML sitemaps, robots.txt misconfigurations, and pages blocked from indexing. These issues reduce your website's visibility and may prevent important pages from appearing in search results altogether.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Regular technical audits help identify hidden issues before they impact your rankings. Monitoring crawl reports, fixing broken pages, improving website architecture, and maintaining a clean URL structure all contribute to stronger long-term SEO performance.",
+  },
+
+  {
+    type: "tips",
+    title: "Best Practices",
+    items: [
+      "Submit an XML sitemap to Google Search Console.",
+      "Fix broken links and redirect chains.",
+      "Use canonical URLs correctly.",
+      "Maintain a clean URL structure.",
+      "Regularly audit your website for technical issues.",
+    ],
+  },
+
+  {
+    type: "heading",
+    level: 2,
+    text: "10. Expecting SEO Results Overnight",
+  },
+
+  {
+    type: "paragraph",
+    text: "One of the most common misconceptions about SEO is expecting immediate results. Search Engine Optimization is a long-term investment that requires consistency, patience, and continuous improvement. Unlike paid advertising, SEO takes time as search engines evaluate your content, authority, backlinks, user engagement, and technical quality before adjusting rankings.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Many businesses abandon their SEO efforts after only a few weeks because they don't see instant traffic growth. In reality, sustainable SEO success comes from publishing valuable content, improving technical performance, earning quality backlinks, and regularly updating existing pages. Consistent effort compounds over time and leads to lasting organic visibility.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Instead of chasing quick wins, focus on building a website that genuinely helps users. Search engines reward websites that consistently provide value, maintain technical excellence, and deliver an outstanding user experience.",
+  },
+
+  {
+    type: "tips",
+    title: "Best Practices",
+    items: [
+      "Treat SEO as a long-term strategy.",
+      "Publish quality content consistently.",
+      "Track rankings and organic traffic monthly.",
+      "Update older content regularly.",
+      "Focus on user experience alongside SEO.",
+    ],
+  },
+    {
+    type: "heading",
+    level: 2,
+    text: "Final Thoughts",
+  },
+
+  {
+    type: "paragraph",
+    text: "SEO success isn't achieved through shortcuts or one-time optimizations. It requires a combination of valuable content, strong technical foundations, fast website performance, excellent user experience, and continuous improvement. By avoiding the common mistakes discussed in this guide, you'll create a website that's easier for search engines to understand and more valuable for your visitors.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Whether you're running a business website, portfolio, eCommerce store, or SaaS platform, investing in proper SEO today can lead to long-term organic growth, increased brand visibility, and higher-quality leads. Start by fixing the basics—keyword research, page speed, mobile responsiveness, metadata, and structured data—then continue refining your strategy as your website grows.",
+  },
+
+  {
+    type: "paragraph",
+    text: "Remember, Google's primary goal is to provide users with the best possible answers. If your website consistently delivers helpful information, loads quickly, works perfectly across devices, and follows SEO best practices, you'll be well-positioned to achieve sustainable rankings over time.",
+  },
+],
+
+faq: [
+  {
+    question: "What is the biggest SEO mistake businesses make?",
+    answer:
+      "The most common SEO mistake is creating content without proper keyword research or understanding user search intent. Without targeting the right audience and search queries, even high-quality content may struggle to rank.",
+  },
+
+  {
+    question: "How long does it take to see SEO results?",
+    answer:
+      "SEO is a long-term strategy. While some improvements can be seen within a few weeks, significant organic growth typically takes between three and six months, depending on your industry, competition, and website authority.",
+  },
+
+  {
+    question: "Does website speed affect SEO?",
+    answer:
+      "Yes. Website speed is an important ranking factor because it directly impacts user experience. Faster websites generally have lower bounce rates, better engagement, and improved Core Web Vitals scores, all of which contribute to stronger SEO performance.",
+  },
+
+  {
+    question: "Why is mobile optimization important for SEO?",
+    answer:
+      "Google uses mobile-first indexing, meaning it primarily evaluates the mobile version of your website when determining rankings. A responsive, mobile-friendly website improves both user experience and search visibility.",
+  },
+
+  {
+    question: "What is technical SEO?",
+    answer:
+      "Technical SEO focuses on optimizing your website's infrastructure so search engines can efficiently crawl, index, and understand your content. It includes website speed, XML sitemaps, structured data, canonical URLs, robots.txt, and fixing crawl errors.",
+  },
+
+  {
+    question: "Is Schema Markup necessary for SEO?",
+    answer:
+      "While Schema Markup isn't a direct ranking factor, it helps search engines understand your content better and can generate rich results such as FAQs, breadcrumbs, reviews, and article snippets, improving click-through rates.",
+  },
+],
+
+relatedPosts: [
+  "complete-guide-to-technical-seo",
+  "nextjs-seo-best-practices",
+  "how-to-improve-core-web-vitals",
+  "website-speed-optimization-guide",
+],
+
+tableOfContents: [
+  {
+    id: "keyword-research",
+    title: "1. Ignoring Keyword Research",
+  },
+  {
+    id: "thin-content",
+    title: "2. Publishing Thin or Low-Quality Content",
+  },
+  {
+    id: "website-speed",
+    title: "3. Poor Website Speed and Performance",
+  },
+  {
+    id: "meta-tags",
+    title: "4. Missing or Poorly Optimized Meta Titles",
+  },
+  {
+    id: "mobile-seo",
+    title: "5. Not Optimizing for Mobile Devices",
+  },
+  {
+    id: "internal-linking",
+    title: "6. Ignoring Internal Linking",
+  },
+  {
+    id: "image-seo",
+    title: "7. Forgetting Image SEO",
+  },
+  {
+    id: "schema-markup",
+    title: "8. Not Using Structured Data (Schema Markup)",
+  },
+  {
+    id: "technical-seo",
+    title: "9. Neglecting Technical SEO",
+  },
+  {
+    id: "seo-patience",
+    title: "10. Expecting SEO Results Overnight",
+  },
+  {
+    id: "final-thoughts",
+    title: "Final Thoughts",
+  },
+],
+}
+
   
 ];
 
