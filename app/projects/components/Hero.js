@@ -12,6 +12,16 @@ export default function Hero() {
       <div className="absolute left-1/2 top-24 -translate-x-1/2">
         <div className="h-[420px] w-[420px] rounded-full bg-white/5 blur-[140px]" />
       </div>
+        <motion.div
+           initial={{opacity:0}}
+           animate={{opacity:0.03}}
+           transition={{duration:1.15}}
+           className="absolute inset-0 flex items-center justify-center  pointer-events-none "
+           >
+      <h2 className='text-[20vw] relative font-black tracking-tight'>
+        PROJECTS
+      </h2>
+           </motion.div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-24 lg:pt-40 lg:pb-32">
 

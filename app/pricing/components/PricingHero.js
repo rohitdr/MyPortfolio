@@ -15,7 +15,7 @@ export default function PricingHero() {
      className="absolute inset-0 flex items-center justify-center  pointer-events-none "
      >
 <h2 className='text-[20vw] relative font-black tracking-tight'>
-  DEVSTACK
+  PRICING
 </h2>
      </motion.div>
       <div className="absolute left-1/2 top-24 -translate-x-1/2">
