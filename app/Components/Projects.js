@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects } from "../projects/data";
 export default function Projects() {
@@ -73,11 +74,13 @@ export default function Projects() {
                 transition={{ duration: 0.4 }}
                 className="overflow-hidden rounded-3xl border border-white/10 bg-zinc-900"
               >
-                <img
-                loading="lazy"
+                <Image
                   src={activeProject.image}
                   alt={activeProject.title}
-                  className="w-full h-137.5 object-cover"
+                  width={1200}
+                  height={700}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="w-full h-auto"
                 />
 
                 <div className="p-8">
@@ -116,10 +119,13 @@ export default function Projects() {
               transition={{ duration: 0.3 }}
               className="bg-zinc-900 rounded-2xl overflow-hidden w-full max-w-md border border-white/10"
             >
-              <img
+              <Image
                 src={mobilePreview.image}
                 alt={mobilePreview.title}
-                className="w-full h-64 object-cover"
+                width={800}
+                height={500}
+                sizes="(max-width: 768px) 90vw, 400px"
+                className="w-full h-auto"
               />
 
               <div className="p-6">

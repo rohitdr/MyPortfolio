@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Gallery({ project }) {
@@ -61,22 +62,19 @@ export default function Gallery({ project }) {
 
               <div className="overflow-hidden">
 
-                <img
+                <Image
                   src={image}
                   alt={`${project.title} Screenshot ${index + 1}`}
-                  className={`
+                  width={1200}
+                  height={800}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 100vw"
+                  className="
                     w-full
-                    object-cover
+                    h-auto
                     transition-transform
                     duration-700
                     group-hover:scale-105
-
-                    ${
-                      index % 3 === 0
-                        ? "h-[260px] sm:h-[420px] lg:h-[620px]"
-                        : "h-[240px] sm:h-[320px] lg:h-[420px]"
-                    }
-                  `}
+                  "
                 />
 
               </div>

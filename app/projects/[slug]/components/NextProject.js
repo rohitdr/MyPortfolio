@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
 import { projects } from "../../data";
@@ -38,17 +39,18 @@ export default function NextProject({ project }) {
 
             <div className="overflow-hidden">
 
-              <img
+              <Image
                 src={nextProject.image}
                 alt={nextProject.title}
+                width={1000}
+                height={600}
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="
-                  h-72
                   w-full
-                  object-cover
+                  h-auto
                   transition-transform
                   duration-700
                   hover:scale-105
-                  lg:h-full
                 "
               />
 

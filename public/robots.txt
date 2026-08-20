@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://rohitdevstack.online
+
+# Sitemaps
+Sitemap: https://rohitdevstack.online/sitemap.xml

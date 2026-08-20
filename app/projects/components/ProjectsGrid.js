@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowRight, FaChevronDown } from "react-icons/fa6";
 import { projects } from "../data";
@@ -31,10 +32,13 @@ export default function ProjectsGrid() {
         {/* Image */}
 
         <div className="overflow-hidden rounded-[32px] border border-white/10 bg-zinc-950">
-          <img
+          <Image
             src={project.image}
             alt={project.title}
-            className="h-[260px] md:h-[380px] lg:h-[460px] w-full object-cover transition duration-700 hover:scale-105"
+            width={1000}
+            height={600}
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="w-full h-auto transition duration-700 hover:scale-105"
           />
         </div>
 

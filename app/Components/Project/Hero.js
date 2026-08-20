@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 export default function Hero({project}) {
     const {name,description,link,github,img} =project
@@ -44,10 +45,13 @@ export default function Hero({project}) {
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
 
             <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl">
-              <img
+              <Image
                 src={img}
                 alt={`${name} preview`}
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                width={1200}
+                height={800}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="w-full h-auto object-contain group-hover:scale-105 transition duration-500"
               />
             </div>
           </motion.div>

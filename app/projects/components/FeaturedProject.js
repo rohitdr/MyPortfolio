@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
 import { projects } from "../data";
@@ -41,10 +42,13 @@ console.log(project)
   >
     <div className="overflow-hidden rounded-[26px] border border-white/10 bg-zinc-950">
 
-      <img
+      <Image
         src={project.image}
         alt={project.title}
-        className="aspect-[16/10] w-full object-cover"
+        width={1000}
+        height={600}
+        sizes="(max-width: 1024px) 100vw, 1000px"
+        className="w-full h-auto"
       />
 
       <div className="p-6">
@@ -155,10 +159,13 @@ console.log(project)
         {/* Image */}
 
         <div className="overflow-hidden">
-          <img
+          <Image
             src={project.image}
             alt={project.title}
-            className="h-[260px] md:h-[420px] lg:h-[560px] w-full object-cover transition duration-700 hover:scale-105"
+            width={1200}
+            height={800}
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            className="w-full h-auto transition duration-700 hover:scale-105"
           />
         </div>
 

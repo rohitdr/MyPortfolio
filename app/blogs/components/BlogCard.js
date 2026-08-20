@@ -24,12 +24,14 @@ export default function BlogCard({ blog, index = 0 }) {
         className="flex h-full flex-col"
       >
         {/* Image */}
-        <div className="relative h-64 overflow-hidden rounded-[1.75rem] border border-white/10">
+        <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-zinc-900">
           <Image
             src={blog.thumbnail || blog.coverImage}
             alt={blog.title}
-            fill
-            className="object-cover transition duration-700 group-hover:scale-105"
+            width={800}
+            height={500}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="w-full h-auto transition duration-700 group-hover:scale-105"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

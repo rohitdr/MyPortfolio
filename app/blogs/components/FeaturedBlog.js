@@ -21,14 +21,16 @@ export default function FeaturedBlog({ blog }) {
           {/* Image */}
           <Link
             href={`/blogs/${blog.slug}`}
-            className="group relative aspect-[4/3] overflow-hidden lg:aspect-auto lg:min-h-[650px]"
+            className="group relative overflow-hidden bg-zinc-950"
           >
             <Image
               src={blog.thumbnail || blog.coverImage}
               alt={blog.title}
-              fill
+              width={1200}
+              height={800}
               priority
-              className="object-cover transition duration-700 group-hover:scale-105"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="w-full h-auto transition duration-700 group-hover:scale-105"
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

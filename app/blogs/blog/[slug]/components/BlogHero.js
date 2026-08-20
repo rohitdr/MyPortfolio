@@ -44,13 +44,15 @@ export default function BlogHero({ blog }) {
           </div>
 
           {/* Right */}
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/10 bg-zinc-900">
+          <div className="overflow-hidden rounded-3xl border border-white/10 bg-zinc-900">
             <Image
               src={blog.coverImage}
               alt={blog.title}
-              fill
+              width={1200}
+              height={800}
               priority
-              className="object-cover transition duration-700 hover:scale-105"
+              sizes="(max-width: 1024px) 100vw, 520px"
+              className="w-full h-auto transition duration-700 hover:scale-105"
             />
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function ImageBlock({
           width={1600}
           height={900}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
-          className="w-full h-auto object-cover transition-transform duration-500 sm:duration-700 group-hover:scale-[1.02]"
+          className="w-full h-auto transition-transform duration-500 sm:duration-700 group-hover:scale-[1.02]"
           priority={false}
         />
       </div>

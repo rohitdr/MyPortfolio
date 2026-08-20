@@ -29,12 +29,14 @@ export default function RelatedBlogs({ blogs = [] }) {
             className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] transition hover:border-white/20"
           >
             {/* Image */}
-            <div className="relative aspect-[16/10] overflow-hidden">
+            <div className="overflow-hidden bg-zinc-900">
               <Image
                 src={blog.coverImage}
                 alt={blog.title}
-                fill
-                className="object-cover transition duration-700 group-hover:scale-105"
+                width={800}
+                height={500}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="w-full h-auto transition duration-700 group-hover:scale-105"
               />
             </div>
 

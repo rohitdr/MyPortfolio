@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa6";
 
@@ -133,10 +134,14 @@ export default function Hero({ project }) {
       >
         <div className="overflow-hidden rounded-[28px] border border-white/10 bg-zinc-950 lg:rounded-[40px]">
 
-          <img
+          <Image
             src={project.image}
             alt={project.title}
-            className="aspect-[16/10] w-full object-cover lg:h-[700px] lg:aspect-auto"
+            width={1400}
+            height={900}
+            priority
+            sizes="(max-width: 1200px) 100vw, 1400px"
+            className="w-full h-auto"
           />
 
         </div>

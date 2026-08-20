@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 export default function Images({name,screenshots}) {
  
@@ -22,10 +23,13 @@ export default function Images({name,screenshots}) {
         key={index}
         className="group rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl shadow-xl hover:scale-105 transition"
       >
-        <img
+        <Image
           src={item.img}
           alt={item.title}
-          className="w-full h-48 object-cover group-hover:scale-110 transition duration-300"
+          width={800}
+          height={500}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="w-full h-auto object-contain group-hover:scale-110 transition duration-300"
         />
 
         <div className="p-4">
