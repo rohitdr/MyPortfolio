@@ -155,7 +155,7 @@ outcome:
     company: "Inquisitive Mind Academy",
   },
 
-  year: "2025",
+  year: "2026",
 
   live: "https://www.inquisitivemindacademy.com",
 
@@ -482,7 +482,7 @@ outcome:
     company: "Luxe Drives",
   },
 
-  year: "2025",
+  year: "2026",
 
   live: "https://luxedrives.in",
 
@@ -856,7 +856,7 @@ outcome:
     company: "ChatNova",
   },
 
-  year: "2025",
+  year: "2026",
 
   live: "https://chat-nova-frontend-4nna.vercel.app/login",
 
@@ -1019,7 +1019,7 @@ outcome:
     company: "Recipe Riot",
   },
 
-  year: "2025",
+  year: "2026",
 
   live: "https://recipe-riot-frontend-aed5.vercel.app/",
 

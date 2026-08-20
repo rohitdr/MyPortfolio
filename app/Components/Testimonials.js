@@ -7,35 +7,27 @@ import { FaArrowRight } from "react-icons/fa6";
 const testimonials = [
   {
     id: "01",
-    name: "Aman Sharma",
-    role: "Founder",
+    name: "Adity Kumar",
+    role: "Owner",
     company: "Luxe Drives",
     review:
-      "Working with Saksam completely transformed our online presence. The website looks premium, performs exceptionally well, and has significantly improved customer enquiries.",
+      "I had a fantastic experience working with Rohit Devstack. They took my vision and turned it into a sleek, functional, and modern website. Communication was seamless, they met every deadline, and they were incredibly patient with my revisions. If you need a reliable and talented web developer, look no further. Highly recommended!",
   },
   {
     id: "02",
-    name: "Priya Verma",
-    role: "Co-Founder",
-    company: "Recipe Riot",
+    name: "Dharminder ",
+    role: "Owner",
+    company: "Bhangal Clinical Lab ",
     review:
-      "Excellent communication, beautiful design, and clean development. Every detail was thoughtfully crafted and delivered on time.",
+      "We’re extremely pleased with the website designed by Rohit for Bhangal Clinical Lab. He created a modern, professional, and user-friendly website that perfectly reflects our vision. His creativity, attention to detail, and support made the process smooth and easy. Highly recommended!",
   },
   {
     id: "03",
-    name: "Rahul Singh",
-    role: "Director",
-    company: "Business Owner",
+    name: "Sachin",
+    role: "Owner",
+    company: "Shyam Budget Friendly Labs",
     review:
-      "Professional from start to finish. The final website exceeded expectations in both design and performance. Highly recommended.",
-  },
-  {
-    id: "04",
-    name: "Ankit Gupta",
-    role: "CEO",
-    company: "Startup Founder",
-    review:
-      "One of the best developers I've worked with. Fast delivery, premium quality and incredible support throughout the project.",
+      "Amazing experience working with Rohit! Professional, supportive, and highly dedicated. He created a modern website exactly as we wanted and continued supporting us even after completion. Highly recommended!",
   },
 ];
 
@@ -291,10 +283,10 @@ export default function Testimonials() {
   <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-10">
 
     {[
-      ["10+", "Projects Delivered"],
-      ["100%", "Client Satisfaction"],
-      ["2+", "Years Experience"],
-      ["24/7", "Support"],
+    ["4+", "Projects Delivered"],     
+["100%", "Client Satisfaction"],  
+["3", " Months Freelance Experience"],
+["Fast", "Turnaround"],              
     ].map(([value, label], index) => (
 
       <motion.div

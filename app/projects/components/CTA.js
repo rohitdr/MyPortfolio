@@ -1,7 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaArrowRight } from "react-icons/fa6";
+import {
+  FaArrowRight,
+  FaFileArrowDown,
+} from "react-icons/fa6";
 
 export default function CTA() {
   return (
@@ -21,44 +24,61 @@ export default function CTA() {
           viewport={{ once: true }}
           className="max-w-5xl"
         >
+
+          {/* Label */}
+
           <p className="uppercase tracking-[0.45em] text-xs text-zinc-500">
-            Your Project Could Be Next
+            Open to Opportunities
           </p>
+
+          {/* Heading */}
 
           <h2 className="mt-8 text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[0.9]">
             Let's Build
             <br />
             Something
             <br />
-            Exceptional.
+            Great.
           </h2>
 
+          {/* Description */}
+
           <p className="mt-10 max-w-2xl text-lg lg:text-xl leading-9 text-zinc-400">
-            Every website I build is designed to look premium, perform fast,
-            and help businesses grow online. If you're ready to create a
-            website that stands out, let's talk.
+            I'm currently looking for opportunities as a MERN Stack Developer.
+            If you're hiring for a frontend, backend, or full-stack role,
+            I'd love to connect and discuss how I can contribute to your team.
           </p>
 
           {/* Buttons */}
 
           <div className="mt-14 flex flex-wrap gap-5">
 
+            {/* Contact */}
+
             <a
-              href="https://wa.me/917009962845?text=Hi%20Rohit,%20I'd%20like%20to%20build%20a%20website."
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact-options"
               className="group flex items-center gap-3 rounded-full bg-white px-8 py-5 text-black transition-all duration-300 hover:scale-105"
             >
-              Start Your Project
+              Let's Connect
 
-              <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+              <FaArrowRight
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
             </a>
 
+            {/* Resume */}
+
             <a
-              href="/pricing"
-              className="rounded-full border border-white/15 px-8 py-5 transition-all duration-300 hover:bg-white hover:text-black"
+              href="https://res.cloudinary.com/do2twyxai/image/upload/v1787247494/Rohit_Kumar_Resume.docx_phbb8k.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 rounded-full border border-white/15 px-8 py-5 transition-all duration-300 hover:bg-white hover:text-black"
             >
-              View Website Packages
+              View Resume
+
+              <FaFileArrowDown
+                className="transition-transform duration-300 group-hover:translate-y-1"
+              />
             </a>
 
           </div>
@@ -76,10 +96,10 @@ export default function CTA() {
         >
 
           {[
-            "Modern Design",
-            "SEO Optimized",
-            "Responsive",
-            "Ongoing Support",
+            "MERN Stack",
+            "React & Next.js",
+            "Node & Express",
+            "Open to Work",
           ].map((item) => (
 
             <div

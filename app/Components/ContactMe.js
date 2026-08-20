@@ -32,8 +32,9 @@ Contact
           viewport={{ once: true }}
           className="text-zinc-400 mt-8 text-lg max-w-2xl mx-auto"
         >
-          Have a project in mind? I’m available for freelance work,
-          collaborations, and full-stack development projects.
+           I'm a Full Stack Developer actively looking for full-time
+          opportunities where I can contribute, learn, and grow with
+          a team. Feel free to reach out.
         </motion.p>
                <motion.div
           initial={{ opacity: 0 }}
@@ -42,7 +43,7 @@ Contact
           className="flex flex-col sm:flex-row gap-6 justify-center mt-12"
         >
           <a
-            href="mailto:yourmail@gmail.com"
+            href="mailto:rohitdr098@gmail.com"
             className="bg-white text-black px-8 py-4 hover:scale-95 transition-all rounded-full font-medium flex items-center justify-center gap-3"
           >
             Send Email <FaArrowRight />
@@ -63,3 +64,4 @@ Contact
   </section>
   );
 }
+

@@ -51,7 +51,7 @@ export default function page() {
       <Hero></Hero>
       <ContactForm></ContactForm>
       <ContactOptions></ContactOptions>
-      <FAQ></FAQ>
+      {/* <FAQ></FAQ> */}
     </div>
   )
 }

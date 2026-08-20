@@ -5,27 +5,27 @@ import { motion } from "framer-motion";
 const reasons = [
   {
     number: "01",
-    title: "Modern Design",
+    title: "Clean & Responsive UI",
     description:
-      "Clean, premium interfaces designed to impress visitors and build trust from the first impression.",
+      "I build responsive interfaces that work smoothly across mobile, tablet, and desktop while keeping the user experience simple and intuitive.",
   },
   {
     number: "02",
-    title: "Performance",
+    title: "Performance Focused",
     description:
-      "Every website is optimized for speed, responsiveness, and smooth user experience across all devices.",
+      "I pay attention to loading speed, efficient rendering, optimized assets, and overall frontend performance when building applications.",
   },
   {
     number: "03",
-    title: "SEO Ready",
+    title: "Production Mindset",
     description:
-      "Built with SEO best practices to help your business rank better on search engines.",
+      "My projects focus on real-world application structure, reusable components, API integration, authentication, database design, and maintainable code.",
   },
   {
     number: "04",
-    title: "Long-Term Support",
+    title: "Problem Solver",
     description:
-      "From launch to future updates, I provide ongoing support to keep your website running smoothly.",
+      "I enjoy breaking complex requirements into practical solutions and continuously improving my skills by building and debugging real applications.",
   },
 ];
 
@@ -47,15 +47,15 @@ export default function WhyChooseMe() {
           </p>
 
           <h2 className="mt-5 text-5xl lg:text-7xl font-black leading-none">
-            Built For
+            How I
             <br />
-            Business Growth
+            Approach Development
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-zinc-400">
-            I don't just build beautiful websites. Every project is designed
-            to generate trust, improve user experience, and help businesses
-            grow online.
+            I focus on building practical, maintainable, and user-friendly
+            applications while continuously improving my skills through
+            real-world projects and hands-on development.
           </p>
         </motion.div>
 
@@ -64,7 +64,6 @@ export default function WhyChooseMe() {
         <div className="mt-20 grid md:grid-cols-2 gap-8">
 
           {reasons.map((item, index) => (
-
             <motion.div
               key={item.number}
               initial={{ opacity: 0, y: 40 }}
@@ -86,7 +85,6 @@ export default function WhyChooseMe() {
                 {item.description}
               </p>
             </motion.div>
-
           ))}
 
         </div>

@@ -5,7 +5,7 @@ export default function Footer() {
     const links = 
   [
    { item:"Projects", path:'/projects'},
-   { item:"Packages",path:'/pricing'},
+  //  { item:"Packages",path:'/pricing'},
    { item:"Contact",path:'/contact'}
   ];
   return (
@@ -34,14 +34,14 @@ export default function Footer() {
           viewport={{ once: true }}
           className="text-[18vw] leading-none tracking-tight"
         >
-          DEVSTACK
+          KUMAR
         </motion.h1>
       </div>
 
       {/* Bottom Bar */}
       <div className="relative z-10 mt-20 max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-zinc-500 text-sm">
 
-        <p>© {new Date().getFullYear()} Rohit Devstack</p>
+        <p>© {new Date().getFullYear()} Rohit KUMAR</p>
 
         <div className="flex gap-6">
           {links.map((link,i)=>

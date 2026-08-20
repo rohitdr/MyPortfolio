@@ -46,7 +46,7 @@ export default function Home() {
    <div className="bg-linear-to-br from-[#0B0F1A] via-[#0F172A] to-[#1E293B] min-h-screen text-white">
    <Hero></Hero>
    <Projects></Projects>
-   <PricingSection></PricingSection>
+   {/* <PricingSection></PricingSection> */}
    <Testimonials></Testimonials>
    <Skills></Skills>
    <ContactMe></ContactMe>

@@ -12,7 +12,7 @@ export default function Hero() {
      className="absolute inset-0 flex items-center justify-center  pointer-events-none "
      >
 <h2 className='text-[20vw] relative font-black tracking-tight'>
-  DEVSTACK
+  ROHIT
 </h2>
      </motion.div>
 
@@ -37,7 +37,7 @@ export default function Hero() {
       ROHIT
     </span>
     <span className='block text-6xl md:text-8xl lg:text-[10rem] text-zinc-600'>
-DEVSTACK
+KUMAR
     </span>
 
    </motion.h1>
@@ -47,9 +47,9 @@ DEVSTACK
          transition={{ delay: 0.2 }}
          className='max-w-2xl text-lg md:text-2xl mt-10 text-zinc-300'
    >
-     Building digital experiences that combine
-          performance, motion, and design to help
-           brands stand out online.
+Full Stack Developer crafting fast, scalable web
+applications with clean code, thoughtful design,
+and real business impact.
 
     
    </motion.p>
