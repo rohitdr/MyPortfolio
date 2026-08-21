@@ -6,8 +6,10 @@ import {
   FiMenu,
   FiX,
   FiHome,
+  FiUser,
   FiCode,
   FiMail,
+  FiGithub,
   FiFileText,
   FiArrowUpRight,
 } from "react-icons/fi";
@@ -23,6 +25,11 @@ export default function Navbar() {
       icon: FiHome,
     },
     {
+      item: "About",
+      path: "/about",
+      icon: FiUser,
+    },
+    {
       item: "Projects",
       path: "/projects",
       icon: FiCode,
@@ -31,6 +38,12 @@ export default function Navbar() {
       item: "Contact",
       path: "/contact",
       icon: FiMail,
+    },
+    {
+      item: "GitHub",
+      path: "https://github.com/rohitdr",
+      icon: FiGithub,
+      external: true,
     },
   ];
 
@@ -71,6 +84,39 @@ export default function Navbar() {
             {links.map((link, i) => {
               const Icon = link.icon;
 
+              if (link.external) {
+                return (
+                  <a
+                    key={i}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      group relative
+                      flex items-center gap-2
+                      hover:text-white transition
+                    "
+                  >
+                    <Icon
+                      size={14}
+                      className="opacity-60 group-hover:opacity-100 transition"
+                    />
+
+                    {link.item}
+
+                    <span
+                      className="
+                        absolute left-0 -bottom-2
+                        w-0 h-px
+                        bg-white
+                        group-hover:w-full
+                        transition-all duration-300
+                      "
+                    />
+                  </a>
+                );
+              }
+
               return (
                 <Link
                   key={i}
@@ -104,17 +150,18 @@ export default function Navbar() {
 
           {/* RIGHT ACTIONS */}
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="flex items-center gap-3">
 
-            {/* Resume */}
+            {/* Desktop Resume */}
 
             <a
               href="https://res.cloudinary.com/do2twyxai/image/upload/v1787247494/Rohit_Kumar_Resume.docx_phbb8k.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="
+                hidden md:flex
                 group
-                flex items-center gap-2
+                items-center gap-2
                 text-xs uppercase tracking-[0.25em]
                 text-zinc-300
                 border border-white/10
@@ -132,13 +179,14 @@ export default function Navbar() {
               Resume
             </a>
 
-            {/* Let's Talk */}
+            {/* Desktop Let's Talk */}
 
             <Link
               href="/contact"
               className="
+                hidden md:flex
                 group
-                flex items-center gap-2
+                items-center gap-2
                 text-xs uppercase tracking-[0.25em]
                 text-black
                 bg-white
@@ -155,17 +203,37 @@ export default function Navbar() {
               />
             </Link>
 
+            {/* Mobile Resume Button (Visible directly on top navbar) */}
+
+            <a
+              href="https://res.cloudinary.com/do2twyxai/image/upload/v1787247494/Rohit_Kumar_Resume.docx_phbb8k.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                flex md:hidden items-center gap-1.5
+                text-[10px] uppercase tracking-[0.2em]
+                text-zinc-300
+                border border-white/15
+                px-3 py-1.5
+                hover:border-white/40 hover:text-white
+                transition
+              "
+            >
+              <FiFileText size={12} />
+              Resume
+            </a>
+
+            {/* MOBILE MENU BUTTON */}
+
+            <button
+              onClick={() => setOpen(!open)}
+              aria-label={open ? "Close menu" : "Open menu"}
+              className="md:hidden text-white text-xl p-1"
+            >
+              {open ? <FiX /> : <FiMenu />}
+            </button>
+
           </div>
-
-          {/* MOBILE MENU BUTTON */}
-
-          <button
-            onClick={() => setOpen(!open)}
-            aria-label={open ? "Close menu" : "Open menu"}
-            className="md:hidden text-white text-xl"
-          >
-            {open ? <FiX /> : <FiMenu />}
-          </button>
         </nav>
       </motion.header>
 
@@ -199,6 +267,27 @@ export default function Navbar() {
               {links.map((link, i) => {
                 const Icon = link.icon;
 
+                if (link.external) {
+                  return (
+                    <a
+                      key={i}
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setOpen(false)}
+                      className="
+                        flex items-center gap-3
+                        hover:text-white
+                        transition
+                      "
+                    >
+                      <Icon size={17} />
+
+                      {link.item}
+                    </a>
+                  );
+                }
+
                 return (
                   <Link
                     key={i}
@@ -217,10 +306,10 @@ export default function Navbar() {
                 );
               })}
 
-              {/* Mobile Resume */}
+              {/* Mobile Resume inside Drawer */}
 
               <a
-                href="/resume.pdf"
+                href="https://res.cloudinary.com/do2twyxai/image/upload/v1787247494/Rohit_Kumar_Resume.docx_phbb8k.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}

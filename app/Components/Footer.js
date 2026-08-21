@@ -6,6 +6,8 @@ export default function Footer() {
   [
    { item:"Projects", path:'/projects'},
   //  { item:"Packages",path:'/pricing'},
+
+   { item:"About",path:'/about'},
    { item:"Contact",path:'/contact'}
   ];
   return (

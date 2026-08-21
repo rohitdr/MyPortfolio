@@ -8,7 +8,8 @@ import Footer from "./Components/Footer";
 import PricingSection from "./Components/PricingSection";
 import Testimonials from "./Components/Testimonials";
 import HomeStructuredData from "./Components/seo/HomePageStructuralData";
-
+import SeoExpertise from "./Components/SeoExpertise";
+import SEOExperience from "./Components/SeoExpertise";
 
 export const metadata = {
   title: "Full Stack Developer",
@@ -46,16 +47,14 @@ export default function Home() {
    <div className="bg-linear-to-br from-[#0B0F1A] via-[#0F172A] to-[#1E293B] min-h-screen text-white">
    <Hero></Hero>
    <Projects></Projects>
+   <SEOExperience></SEOExperience>
    {/* <PricingSection></PricingSection> */}
    <Testimonials></Testimonials>
    <Skills></Skills>
+  
    <ContactMe></ContactMe>
    <Footer></Footer>
     </div>
-  
-
- 
     </>
-   
   );
 }
