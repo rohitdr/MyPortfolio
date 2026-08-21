@@ -1,75 +1,145 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  FaMagnifyingGlass,
+  FaChartLine,
+  FaCode,
+  FaGaugeHigh,
+} from "react-icons/fa6";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
-
-const stagger = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-};
-
-const seoPoints = [
+const expertise = [
   {
+    number: "01",
+    icon: FaMagnifyingGlass,
     title: "Technical SEO",
-    desc: "Semantic HTML, meta tags, sitemap & robots.txt, structured data, and strong Core Web Vitals.",
+    description:
+      "Metadata, canonical URLs, sitemaps, robots.txt, schema markup, and crawl-friendly architecture.",
   },
   {
+    number: "02",
+    icon: FaChartLine,
     title: "On-Page SEO",
-    desc: "Optimized headings, alt text, and clean, crawlable content structure across pages.",
+    description:
+      "Keyword targeting, headings, internal linking, content structure, and local SEO.",
   },
   {
+    number: "03",
+    icon: FaCode,
+    title: "SEO Development",
+    description:
+      "Next.js metadata, semantic HTML, structured data, URL architecture, and indexability.",
+  },
+  {
+    number: "04",
+    icon: FaGaugeHigh,
     title: "Performance",
-    desc: "Lazy loading, code-splitting, and Redis-backed APIs to keep pages fast — which search engines reward.",
+    description:
+      "Page speed, responsive development, Core Web Vitals, and performance optimization.",
   },
 ];
 
-export default function SeoExpertise() {
+export default function SEOExperience() {
   return (
-    <section className="w-full px-6 lg:px-10 py-16 max-w-7xl mx-auto">
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={fadeUp}
-        className="mb-12"
-      >
-        <p className="uppercase tracking-[0.4em] text-zinc-500 text-xs mb-3">
-          SEO Expertise
-        </p>
-        <h2 className="text-4xl md:text-6xl font-black">
-          Engineered for <br className="hidden sm:inline" /> Visibility & Performance
-        </h2>
-        <p className="mt-4 text-zinc-400 text-base max-w-2xl">
-          I build web applications that don&apos;t just look great — they are structured to rank highly on search engines and load instantaneously.
-        </p>
-      </motion.div>
+    <section className="border-t border-white/10 bg-black">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 py-20 sm:py-24 lg:py-28">
 
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={stagger}
-        className="grid grid-cols-1 md:grid-cols-3 gap-6"
-      >
-        {seoPoints.map((point) => (
-          <motion.div
-            key={point.title}
-            variants={fadeUp}
-            className="border border-white/10 rounded-2xl bg-zinc-900/40 p-8 hover:border-white/20 transition-all group"
-          >
-            <h3 className="text-xl font-bold group-hover:text-white transition-colors">
-              {point.title}
-            </h3>
-            <p className="mt-3 text-zinc-400 text-sm leading-relaxed">
-              {point.desc}
-            </p>
-          </motion.div>
-        ))}
-      </motion.div>
+        {/* Heading */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-2xl"
+        >
+          <p className="uppercase tracking-[0.3em] text-[10px] sm:text-xs text-zinc-500">
+            Additional Expertise
+          </p>
+
+          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-black leading-[0.95]">
+            Development
+            <br />
+            Meets SEO.
+          </h2>
+
+          <p className="mt-6 text-sm sm:text-base leading-7 text-zinc-400">
+            Alongside development, I have hands-on experience with technical
+            SEO, on-page optimization, structured data, and website
+            performance.
+          </p>
+        </motion.div>
+
+        {/* Expertise */}
+
+        <div className="mt-12 sm:mt-16 grid md:grid-cols-2 gap-3 sm:gap-4">
+
+          {expertise.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <motion.div
+                key={item.number}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.06 }}
+                className="
+                  group
+                  flex gap-4
+                  rounded-2xl
+                  border border-white/10
+                  bg-zinc-950
+                  p-4 sm:p-5
+                  transition-colors duration-300
+                  hover:border-white/25
+                "
+              >
+
+                {/* Icon */}
+
+                <div
+                  className="
+                    shrink-0
+                    flex h-10 w-10
+                    items-center justify-center
+                    rounded-xl
+                    bg-white/5
+                    text-zinc-400
+                    group-hover:bg-white
+                    group-hover:text-black
+                    transition-colors
+                  "
+                >
+                  <Icon size={16} />
+                </div>
+
+                {/* Content */}
+
+                <div className="min-w-0">
+
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-base sm:text-lg font-bold">
+                      {item.title}
+                    </h3>
+
+                    <span className="text-[9px] tracking-widest text-zinc-600">
+                      {item.number}
+                    </span>
+                  </div>
+
+                  <p className="mt-1.5 text-xs sm:text-sm leading-6 text-zinc-500">
+                    {item.description}
+                  </p>
+
+                </div>
+
+              </motion.div>
+            );
+          })}
+
+        </div>
+
+      </div>
     </section>
   );
 }
